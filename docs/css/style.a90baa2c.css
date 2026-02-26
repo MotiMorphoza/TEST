@@ -518,8 +518,8 @@ body.app-active .shell-layout {
   opacity: 0;
   filter: blur(6px);
   transition:
-    opacity 2s ease,
-    filter 2s ease;
+    opacity 1.5s ease,
+    filter 1.5s ease;
   will-change: opacity, filter;
 }
 
