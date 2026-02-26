@@ -1,0 +1,2743 @@
+:root {
+  --bg: #000;
+  --fg: #fff;
+  --muted: rgba(255, 255, 255, 0.7);
+  --overlay: rgba(0, 0, 0, 0.45);
+  --sidebar-width: 320px;
+}
+* {
+  box-sizing: border-box;
+}
+html,
+body {
+  margin: 0;
+  height: 100%;
+  font-family: "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  background: var(--bg);
+  color: var(--fg);
+}
+body {
+  overflow: hidden;
+}
+.page-shell,
+.page-landing {
+  height: 100vh;
+  height: 100dvh;
+  overflow: hidden;
+}
+
+/* Shared slideshow */
+
+.slide-viewport {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  min-height: 0;
+  padding: 2rem;
+}
+.slide {
+  position: absolute;
+  inset: 0;
+  margin: auto;
+  background: #000;
+  max-width: 100%;
+  max-height: calc(100% - 8rem);
+  width: auto;
+  height: auto;
+  object-fit: contain;
+  opacity: 0;
+  z-index: 1;
+  transition:
+    opacity 1s ease;
+}
+.slide.active {
+  opacity: 1;
+  z-index: 2;
+}
+
+/* ===== LANDING ===== */
+
+.page-landing,
+.landing {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+}
+.landing .slide-viewport {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+}
+.landing-overlay {
+  position: absolute;
+  inset: 0;
+  background: transparent;
+  z-index: 2;
+  pointer-events: none;
+}
+.landing-content {
+  position: absolute;
+  inset: 0;
+  z-index: 3;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  align-items: center;
+  text-align: center;
+  gap: 0.25rem;
+  padding: 0 1rem 8vh;
+  transform: none;
+}
+.landing-bg {
+  position: absolute;
+  inset: 0;
+  background-size: contain;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-color: #000;
+  z-index: 1;
+}
+.landing-content h1,
+.landing-content p {
+  text-shadow:
+    -1px -1px 0 #000,
+    1px -1px 0 #000,
+    -1px 1px 0 #000,
+    1px 1px 0 #000;
+}
+.landing-content h1 {
+  font-size: clamp(2.6rem, 5.1vw, 4.2rem);
+  font-weight: 500;
+  letter-spacing: 0.07em;
+  margin: 0;
+}
+.landing-content p {
+  font-size: clamp(1.1rem, 2vw, 1.45rem);
+  opacity: 0.9;
+  margin-top: 0.3rem;
+} /* Shell pages */
+.shell-layout {
+  height: 100%;
+  min-height: 0;
+  display: grid;
+  grid-template-columns: minmax(220px, 260px) minmax(0, 1fr);
+  overflow: hidden;
+}
+[data-sidebar] {
+  min-height: 0;
+}
+.enter-btn {
+  margin-top: 0.55rem;
+  padding: 0.7rem 1.6rem;
+  border: 1px solid #fff;
+  color: #fff;
+  text-decoration: none;
+  letter-spacing: 0.1em;
+  background: rgba(0, 0, 0, 0.3);
+  transition: 0.2s;
+}
+.enter-btn:hover {
+  background: #fff;
+  color: #000;
+}
+.sidebar {
+  height: 100%;
+  min-height: 0;
+  overflow: hidden;
+  background: #000;
+  display: grid;
+  grid-template-rows: auto auto minmax(0, 1fr) auto;
+  align-content: start;
+  justify-items: center;
+  padding: 2.5rem 13px max(1rem, env(safe-area-inset-bottom));
+  text-align: center;
+}
+.logo {
+  font-size: clamp(2.3rem, 2.7vw, 2.7rem);
+  font-weight: 500;
+  letter-spacing: 0.04em;
+  margin: 1rem;
+}
+.tagline {
+  margin-top: 0.4rem;
+  font-size: 1rem;
+  opacity: 0.85;
+}
+.menu {
+  list-style: none;
+  padding: 0 0.25rem;
+  margin: 3rem 0 0;
+  display: flex;
+  flex-direction: column;
+  gap: 1.1rem;
+  height: 100%;
+  overflow-y: auto;
+}
+.menu a {
+  color: #fff;
+  text-decoration: none;
+  font-size: 1.5rem;
+  letter-spacing: 0.03em;
+  transition: opacity 0.2s ease;
+}
+.menu a:hover {
+  opacity: 0.65;
+}
+.menu a[aria-current="page"] {
+  color: #d4d4d4;
+}
+.menu-toggle {
+  display: none;
+}
+.sidebar nav {
+  width: 100%;
+  min-height: 0;
+  overflow: hidden;
+}
+.content-pane {
+  height: 100%;
+  min-height: 0;
+  position: relative;
+  overflow-y: auto;
+  padding-top: 60px;
+  padding-bottom: 90px;
+}
+.about-pane {
+  padding: clamp(1rem, 3vw, 2.6rem);
+}
+.about-text h1 {
+  margin-top: 0;
+  font-size: clamp(1.8rem, 3.2vw, 2.6rem);
+}
+.about-text p {
+  line-height: 1.6;
+  color: rgba(255, 255, 255, 0.9);
+}
+.about-image-wrap {
+  margin: 0;
+}
+.about-image-wrap img {
+  width: 100%;
+  max-width: 560px;
+  height: auto;
+  display: block;
+  margin-inline: auto;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+} /* מדיה תמיד בתחתית הסיידבר */
+.social {
+  margin: 1.5rem 0 0;
+  list-style: none;
+  padding: 0;
+  display: flex;
+  gap: 1.2rem;
+  justify-content: center;
+  align-self: stretch;
+} /* גודל אייקונים קבוע */
+.social img {
+  width: 24px;
+  height: 24px;
+  object-fit: contain;
+}
+.social a {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  transition:
+    transform 0.2s ease,
+    opacity 0.2s ease;
+}
+.social a:hover {
+  transform: scale(1.15);
+  opacity: 0.9;
+} /* ===== PROJECTS PAGE ===== */
+.projects-list {
+  display: flex;
+  flex-direction: column;
+}
+.project-item {
+  min-height: 100dvh;
+  padding: clamp(18px, 3vh, 36px) 34px;
+  display: flex;
+  align-items: center;
+}
+.project-item.bg-1 {
+  background: #101010;
+}
+.project-item.bg-2 {
+  background: #151515;
+}
+.project-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: clamp(18px, 3vw, 40px);
+  align-items: center;
+  justify-items: center;
+  width: 100%;
+} /* זיגזג אמיתי לפי סדר בלבד */
+.project-item.reverse .project-media {
+  order: 2;
+}
+.project-item.reverse .project-text {
+  order: 1;
+}
+
+.project-media.placeholder {
+  background: linear-gradient(135deg, #232323, #111111);
+}
+.project-text {
+  border: 1px solid rgba(255, 255, 255, 0.75);
+  padding: 24px;
+  max-width: 520px;
+  width: 100%;
+  text-align: left;
+}
+.project-text h2 {
+  margin: 0 0 12px;
+  font-size: 1.35rem;
+  letter-spacing: 0.03em;
+}
+.project-text p {
+  margin: 0;
+  color: #c9c9c9;
+  line-height: 1.6;
+}
+.separator {
+  display: flex;
+  justify-content: center;
+  background: #0d0d0d;
+}
+.separator::before {
+  content: "";
+  width: 1px;
+  height: 60px;
+  background: rgba(255, 255, 255, 0.35);
+  margin: 6px 0;
+} /* ===== ABOUT Vertical Layout Only ===== */
+.about-pane .about-grid {
+  display: grid;
+  grid-template-columns: minmax(320px, 1.1fr) minmax(260px, 0.9fr);
+  gap: clamp(1.25rem, 2.5vw, 3rem);
+  align-items: start;
+} /* ===== PROJECT CONTENT WRAPPER ===== */
+.content-pane .project-content {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: clamp(20px, 4vw, 60px);
+}
+
+/* ===== PROJECT GALLERY ===== */
+
+.content-pane .project-gallery {
+  display: flex;
+  flex-direction: column;
+  gap: min(35vh, 320px); /* רווח טבעי בין תמונות */
+  padding: clamp(20px, 4vh, 60px) 0;
+}
+
+/* ===== IMAGES ===== */
+
+.content-pane .project-gallery img {
+  display: block;
+  width: min(100%, 1100px);
+  height: auto;
+  max-width: 100%;
+  max-height: calc(100dvh - 120px);
+  object-fit: contain;
+  margin: 0 auto; /* אנימציית כניסה */
+  box-shadow:
+    0 20px 60px rgba(0, 0, 0, 0.9),
+    0 0 0 1px rgba(255, 255, 255, 0.06);
+}
+
+
+/* ===== HOME SHELL (NO PAGE SCROLL) ===== */
+.page-main .content-pane {
+  display: grid;
+  place-items: center;
+  padding: 0;
+  overflow: hidden;
+}
+.page-main .slide-viewport {
+  width: 100%;
+  height: 100%;
+  padding: 2rem;
+  align-items: center;
+}
+.page-main .slide {
+  max-height: 100%;
+}
+
+/* ===== slide-indicator ===== */
+.slide-indicator {
+  position: fixed;
+  font-size: 0.85rem;
+  letter-spacing: 0.08em;
+  color: rgba(255, 255, 255, 0.7);
+  z-index: 120;
+  pointer-events: none;
+  display: none;
+}
+
+body[data-page="project"] .slide-indicator.is-visible {
+  display: block;
+}
+a.project-text {
+  color: #fff;
+  text-decoration: none;
+}
+.project-text .enter {
+  border-bottom: 1px solid transparent;
+  transition: border-color 0.2s ease;
+}
+.project-text:hover .enter {
+  border-bottom: 1px solid rgba(255, 255, 255, 0.6);
+}
+
+.project-figure {
+  display: flex;
+  min-height: 100dvh;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  padding: 0;
+  margin-inline: auto;
+}
+
+.project-caption {
+  max-width: 900px;
+  width: 100%;
+  font-size: 1.33rem;
+  color: rgba(255, 255, 255, 0.75);
+  text-align: center;
+}
+
+.lightbox {
+  position: fixed;
+  inset: 0;
+  background: #000;
+  display: none;
+  align-items: center;
+  justify-content: center;
+  z-index: 999;
+}
+
+.lightbox img {
+  max-width: 92vw;
+  max-height: 92vh;
+  object-fit: contain;
+}
+
+.lightbox.active {
+  display: flex;
+}
+
+.lightbox-close {
+  position: absolute;
+  top: 20px;
+  left: 20px;
+  background: none;
+  border: 1px solid #fff;
+  color: #fff;
+  padding: 6px 12px;
+  cursor: pointer;
+}
+
+.project-gallery img {
+  cursor: pointer;
+}
+
+.project-gallery img:hover {
+  filter: brightness(1.05);
+}
+
+#pageFade {
+  position: fixed;
+  inset: 0;
+  background: #000;
+  pointer-events: none;
+  opacity: 0;
+  transition: opacity 0.45s ease;
+  z-index: 9999;
+}
+
+#pageFade.active {
+  opacity: 1;
+}
+
+#landing-overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 5000;
+  background: var(--bg);
+}
+
+body.landing-active .shell-layout {
+  visibility: hidden;
+}
+
+body.app-active .shell-layout {
+  visibility: visible;
+}
+
+
+
+/* ===== PROJECT COUNTER POSITION ===== */
+
+@media (min-width: 701px) {
+  body[data-page="project"] .slide-indicator {
+    position: fixed;
+    top: 22px;
+    right: 30px;
+    left: auto;
+    bottom: auto;
+    transform: none;
+  }
+}
+
+
+
+.project-media {
+  display: block;
+  width: 100%;
+  max-width: 520px;
+  max-height: min(68dvh, 760px);
+  height: auto;
+  object-fit: contain;
+}
+
+
+
+/* ===== IMAGE FADE CLEAN ===== */
+
+.project-media,
+.project-gallery img {
+  opacity: 0;
+  filter: blur(6px);
+  transition:
+    opacity 1.5s ease,
+    filter 1.5s ease;
+  will-change: opacity, filter;
+}
+
+.project-media.is-ready,
+.project-gallery img.is-ready {
+  opacity: 1;
+  filter: blur(0);
+}
+
+
+
+
+
+@media (max-width: 700px) {
+  body[data-page="project"] .slide-indicator {
+    position: fixed;
+    top: calc(56px / 2);
+    left: 50%;
+    right: auto;
+    bottom: auto;
+    transform: translate(-50%, -50%);
+    font-size: 0.75rem;
+  }
+}
+
+
+
+/* ===== MOBILE ===== */
+
+@media (max-width: 700px) {
+  body {
+    overflow-x: hidden;
+    overflow-y: auto;
+  }
+  .page-shell {
+    height: auto;
+    min-height: 100dvh;
+    overflow: visible;
+  }
+
+  /* ===== LANDING TEXT ===== */
+
+  .landing {
+    position: relative;
+    height: 100%;
+    overflow: hidden;
+  }
+  .landing-bg {
+    background-size: contain;
+    background-position: center top;
+    background-repeat: no-repeat;
+    background-color: #000;
+  }
+  .landing-content {
+    position: absolute;
+    bottom: 12vh; /* מצמיד לטקסט לתחתית */
+    left: 0;
+    right: 0;
+    top: auto;
+    transform: none; /* מבטל הזזה למעלה */
+    gap: 0.25rem;
+    padding: 0 1rem;
+  }
+  .landing-content h1 {
+    font-size: clamp(1.6rem, 6vw, 2.2rem);
+  }
+  .landing-content p {
+    font-size: 0.9rem;
+  }
+  .enter-btn {
+    margin-top: 0.1rem;
+    padding: 0.45rem 1rem;
+    font-size: 0.8rem;
+  }
+
+  /* ===== SHELL STRUCTURE ===== */
+
+  .shell-layout {
+    display: block;
+    min-height: 100dvh;
+  }
+  .content-pane {
+    min-height: 100dvh;
+    height: auto;
+    position: relative;
+    overflow-y: auto;
+    overscroll-behavior-y: auto;
+    padding-top: 60px;
+    padding-bottom: 100px;
+  }
+
+  /* ===== TOP BAR ===== */
+
+  .sidebar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 56px;
+    padding: 0 12px;
+    background: #000;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    z-index: 100;
+  }
+  .sidebar nav {
+    width: 0;
+    min-width: 0;
+  }
+  .logo {
+    font-size: 1rem;
+    margin: 0;
+    white-space: nowrap;
+    flex: 0 0 auto;
+    margin-right: auto;
+  }
+  .tagline {
+    display: none !important;
+  }
+  /* ===== MENU BUTTON ===== */
+
+  .menu-toggle {
+    position: absolute;
+    top: 50%;
+    right: 10px;
+    transform: translateY(-50%);
+    display: flex;
+    align-items: center;
+    gap: 4px;
+    font-size: 0.75rem;
+    padding: 4px 6px;
+    margin-left: 0;
+  }
+  .menu-label {
+    font-size: 0.7rem;
+    letter-spacing: 0.08em;
+  }
+  .menu-icon {
+    font-size: 0.9rem;
+    line-height: 1;
+  }
+
+  /* ===== DROPDOWN MENU ===== */
+
+  .menu {
+    position: fixed;
+    top: 56px;
+    left: 0;
+    right: 0;
+    background: #000;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 18px;
+    padding: 20px 0;
+    margin: 0;
+    transform: translateY(-120%);
+    transition: transform 0.3s ease;
+    z-index: 90;
+  }
+
+  .menu.open {
+    transform: translateY(0);
+  }
+
+  .menu a {
+    font-size: 1.1rem;
+  }
+
+  /* ===== HOME SLIDE FIX ===== */
+
+  .slide-viewport {
+    height: calc(100dvh - 126px);
+    padding: 0;
+    align-items: center;
+  }
+
+  .slide {
+    max-height: 100%;
+    margin-top: 0;
+  }
+
+  /* ===== PROJECTS MOBILE LAYOUT ===== */
+
+  .projects-list {
+    padding: 0 14px 100px;
+  }
+
+  .project-item {
+    min-height: auto;
+    margin-bottom: 40px;
+    padding: 0;
+    background: none !important;
+    display: block;
+  }
+
+  .project-grid,
+  .project-item.reverse .project-grid {
+    display: block;
+  }
+
+  .project-text {
+    max-width: none;
+    width: 100%;
+    margin-bottom: 14px;
+    border: none;
+    padding: 0;
+  }
+
+  .project-media {
+    width: 100%;
+    max-width: none;
+    margin: 0;
+    display: block;
+  }
+
+  .project-caption {
+    font-size: 1rem;
+  }
+
+  /* === CLEAN MOBILE GALLERY FIX === */
+
+  .content-pane .project-content {
+    padding: 20px 14px 40px;
+  }
+
+  .content-pane .project-gallery {
+    gap: clamp(120px, 18vh, 240px);
+    padding: 20px 0;
+    overflow-x: clip; /* זה היה חסר */
+  }
+
+  .project-gallery .project-figure {
+    width: 100%;
+    min-height: auto;
+    padding: 40px 0;
+    align-items: stretch; /* קריטי */
+  }
+
+  /* === REMOVE DESKTOP SHADOW DRIFT ON MOBILE === */
+
+  .content-pane .project-gallery img {
+    width: 100%;
+    max-width: 100%;
+    max-height: calc(100dvh - 150px);
+    height: auto;
+
+    margin: 0; /* במקום auto */
+    display: block;
+
+    box-shadow:
+      0 20px 60px rgba(0, 0, 0, 0.7),
+      0 0 0 1px rgba(255, 255, 255, 0.05);
+  }
+
+
+  /* ===== SOCIAL BAR ===== */
+  .social {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    margin: 0;
+    padding: 12px 0 max(12px, env(safe-area-inset-bottom));
+    background: #000;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    justify-content: center;
+    z-index: 160;
+  }
+
+}
+
+
+-------------------------------------
+
+projects.html
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <title>MotoSynteza - Projects</title>
+     </head>
+  <body class="page-shell" data-page="projects">
+    <div class="shell-layout">
+      <div data-sidebar></div>
+
+      <main class="content-pane">
+        <div id="projects-list" class="projects-list"></div>
+      </main>
+    </div>
+    <script src="js/projects-manifest.js"></script>
+    <script src="js/projects.js"></script>
+    <script src="js/layout.js"></script>
+  </body>
+</html>
+
+
+------------------------------------------------------
+
+project.html
+
+<!doctype html>
+<html lang="en">
+<head>
+  <title>MotoSynteza – Project</title>
+</head>
+
+<body class="page-shell" data-page="project">
+  <div class="dynamic-bg">
+    <div class="dynamic-bg-layer active" id="bg1"></div>
+    <div class="dynamic-bg-layer" id="bg2"></div>
+  </div>
+
+  <div class="shell-layout">
+    <div data-sidebar></div>
+
+    <main class="content-pane">
+      <div class="project-content">
+        <div class="project-gallery"></div>
+      </div>
+    </main>
+  </div>
+
+  <div id="lightbox" class="lightbox">
+    <button class="lightbox-close">BACK</button>
+    <img src="" alt="">
+  </div>
+
+  <div id="slideIndicator" class="slide-indicator"></div>
+
+  <script src="js/layout.js"></script>
+</body>
+</html>
+
+
+-------------------------------------------
+
+build.js
+
+// build.js
+const fs = require('fs');
+const path = require('path');
+
+const Logger = require('./build/logger');
+const Scanner = require('./build/scanner');
+const Hasher = require('./build/hasher');
+const HtmlProcessor = require('./build/html-processor');
+const ManifestGenerator = require('./build/manifest-generator');
+const HeadOrchestrator = require('./build/head-orchestrator');
+const Versioning = require('./build/versioning');
+const AtomicDeployer = require('./build/atomic-deployer');
+
+class SuperBuild {
+  constructor() {
+    this.logger = new Logger();
+    this.scanner = new Scanner(this.logger);
+    this.hasher = new Hasher(this.logger);
+    this.htmlProcessor = new HtmlProcessor(this.logger);
+    this.manifestGenerator = new ManifestGenerator(this.logger);
+    this.versioning = new Versioning(this.logger);
+    this.deployer = new AtomicDeployer(this.logger);
+    this.rootDir = process.cwd();
+  }
+
+  build() {
+    try {
+      this.logger.info('Starting build process');
+
+      this.validateSource();
+      this.validateProjects(this.rootDir);
+
+      const tempDir = this.deployer.initTempDir(this.rootDir);
+      this.deployer.copyToTemp(this.rootDir, tempDir);
+      const buildProjects = this.validateProjects(tempDir);
+      this.generateProjectsManifest(buildProjects, tempDir);
+
+      // ---------- Manifest ----------
+      const manifestData = this.manifestGenerator.createManifestData(
+        this.scanner,
+        path.join(tempDir, 'images'),
+        tempDir
+      );
+
+      const manifestPath = path.join(tempDir, 'js', 'image-manifest.js');
+      this.manifestGenerator.generate(manifestData, manifestPath);
+      const manifestContent = fs.readFileSync(manifestPath, 'utf8');
+
+      // ---------- Preliminary version ----------
+      const prelimVersion = this.versioning.generateVersion(new Map(), manifestContent);
+      this.versioning.createVersionFile(tempDir, prelimVersion);
+
+      // ---------- Hash assets ----------
+      this.hasher.hashAssets(tempDir, this.scanner);
+      const renameMap = this.hasher.getRenameMap();
+
+      // ---------- Final version ----------
+      const finalVersion = this.versioning.generateVersion(renameMap, manifestContent);
+
+      const jsDir = path.join(tempDir, 'js');
+      const jsFiles = fs.readdirSync(jsDir).sort();
+
+      const hashedVersionFile = jsFiles.find(f =>
+        /^build-version\.[a-f0-9]{8}\.js$/.test(f)
+      );
+
+      if (hashedVersionFile) {
+        fs.writeFileSync(
+          path.join(jsDir, hashedVersionFile),
+          `window.__BUILD_VERSION__ = "${finalVersion}";\n`,
+          'utf8'
+        );
+      }
+
+      // ---------- Rewrite ALL HTML ----------
+      const htmlFiles = this.scanner.findHtmlFiles(tempDir);
+      this.htmlProcessor.processHtmlFiles(htmlFiles, tempDir, renameMap);
+
+      // ---------- Rewrite partials ----------
+      const partialsDir = path.join(tempDir, 'partials');
+      if (fs.existsSync(partialsDir)) {
+        const partialFiles = fs.readdirSync(partialsDir)
+          .filter(f => f.endsWith('.html'));
+
+        for (const partialFile of partialFiles) {
+          const filePath = path.join(partialsDir, partialFile);
+          this.htmlProcessor.processFragment(filePath, renameMap, tempDir);
+        }
+      }
+
+      // ---------- Rewrite CSS url() ----------
+      const cssDir = path.join(tempDir, 'css');
+      if (fs.existsSync(cssDir)) {
+        const cssFiles = fs.readdirSync(cssDir)
+          .filter(f => f.endsWith('.css'));
+
+        for (const cssFile of cssFiles) {
+          const cssPath = path.join(cssDir, cssFile);
+          let cssContent = fs.readFileSync(cssPath, 'utf8');
+
+          for (const [oldPath, newPath] of renameMap.entries()) {
+            const escaped = oldPath.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
+            const regex = new RegExp(escaped, 'g');
+            cssContent = cssContent.replace(regex, newPath);
+          }
+
+          fs.writeFileSync(cssPath, cssContent, 'utf8');
+        }
+      }
+
+      // ---------- Rewrite manifest ----------
+      const jsFilesAfterHash = fs.readdirSync(jsDir);
+      const manifestFile = jsFilesAfterHash.find(f =>
+        /^image-manifest\.[a-f0-9]{8}\.js$/.test(f)
+      );
+
+      if (!manifestFile) {
+        throw new Error('Hashed manifest file not found');
+      }
+
+      const manifestFullPath = path.join(jsDir, manifestFile);
+      let manifestJs = fs.readFileSync(manifestFullPath, 'utf8');
+
+      for (const [oldPath, newPath] of renameMap.entries()) {
+        const escaped = oldPath.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
+        const regex = new RegExp(escaped, 'g');
+        manifestJs = manifestJs.replace(regex, newPath);
+      }
+
+      fs.writeFileSync(manifestFullPath, manifestJs, 'utf8');
+
+      // ---------- HEAD orchestration ----------
+      const assets = {
+        versionScriptPath: hashedVersionFile
+          ? `js/${hashedVersionFile}`
+          : null,
+        renameMap,
+        version: finalVersion,
+        cspPolicy:
+          "default-src 'self'; img-src 'self' https: data:; script-src 'self'; style-src 'self'; font-src 'self' https:; object-src 'none'; base-uri 'self'; form-action 'self'"
+      };
+
+for (const htmlFile of htmlFiles) {
+  const filePath = path.join(tempDir, htmlFile);
+  let html = fs.readFileSync(filePath, 'utf8');
+
+  const headOrchestrator = new HeadOrchestrator({
+    logger: this.logger,
+    renameMap,
+    manifestData,
+    version: finalVersion,
+    assets,
+    htmlFile
+  });
+
+
+        html = headOrchestrator.buildHead(html);
+        fs.writeFileSync(filePath, html, 'utf8');
+      }
+
+      // ---------- Verify ----------
+      this.htmlProcessor.verifyReferences(htmlFiles, tempDir);
+
+      if (fs.existsSync(partialsDir)) {
+        const partialFiles = fs.readdirSync(partialsDir)
+          .filter(f => f.endsWith('.html'))
+          .map(f => path.join('partials', f));
+
+        this.htmlProcessor.verifyReferences(partialFiles, tempDir);
+      }
+
+      // ---------- Deploy ----------
+      this.deployer.deploy(this.rootDir);
+      this.logger.printSummary(path.join(this.rootDir, 'docs'));
+
+    } catch (error) {
+      this.logger.error(`Build failed: ${error.message}`);
+      this.deployer.cleanup(this.rootDir);
+      process.exit(1);
+    }
+  }
+
+  generateProjectsManifest(projects, tempDir) {
+  const outputPath = path.join(tempDir, 'js', 'projects-manifest.js');
+
+  const payload = projects.map(project => ({
+    slug: project.slug,
+    title: project.title,
+    description: project.description || '',
+    cover: project.images[0]?.src || '',
+    imageCount: project.images.length
+  }));
+
+  const content = `window.__PROJECTS__ = ${JSON.stringify(payload, null, 2)};\n`;
+
+  fs.mkdirSync(path.dirname(outputPath), { recursive: true });
+  fs.writeFileSync(outputPath, content, 'utf8');
+
+  this.logger.info('Generated projects manifest: js/projects-manifest.js');
+}
+  validateProjects(rootDir) {
+    const projects = this.scanner.scanProjectsFromRoot(rootDir);
+    this.logger.info(`Validated ${projects.length} projects from folder slugs`);
+    return projects;
+  }
+
+  validateSource() {
+    const required = ['index.html', 'css', 'js', 'images'];
+
+    for (const item of required) {
+      if (!fs.existsSync(path.join(this.rootDir, item))) {
+        throw new Error(`Missing required directory: ${item}`);
+      }
+    }
+
+    this.logger.info('Source structure validated');
+  }
+}
+
+if (require.main === module) {
+  new SuperBuild().build();
+}
+
+module.exports = SuperBuild;
+
+
+-------------------------------------------
+
+sidebar.html
+
+<aside class="sidebar">
+  <div class="logo">MotoSynteza</div>
+
+  <div class="menu-toggle">
+    <span class="menu-label">MENU</span>
+    <span class="menu-icon">☰</span>
+  </div>
+
+  <p class="tagline">Art at the speed of light</p>
+
+  <nav aria-label="Main navigation">
+    <ul class="menu">
+      <li><a href="main.html" data-nav="home">Home</a></li>
+      <li><a href="projects.html" data-nav="projects">Projects</a></li>
+      <li><a href="about.html" data-nav="about">About</a></li>
+      <li><a href="#">Shop</a></li>
+      <li><a href="#">More</a></li>
+    </ul>
+  </nav>
+
+<ul class="social" aria-label="Social links">
+    <li>
+    <a href="https://www.facebook.com/share/1HxTg8LhfZ" target="_blank" rel="noopener noreferrer" aria-label="Facebook">
+      <img src="images/media/Facebook.png" alt="Facebook" />
+    </a>
+  </li>
+  <li>
+    <a href="https://www.instagram.com/moto_synteza?igsh=dG9ka2FrZ3dlemMw" target="_blank" rel="noopener noreferrer" aria-label="Instagram">
+      <img src="images/media/Instagram.png" alt="Instagram" />
+    </a>
+  </li>
+  <li>
+    <a href="https://mail.google.com/mail/?view=cm&fs=1&to=mottex@gmail.com" target="_blank" rel="noopener noreferrer" aria-label="Email">
+      <img src="images/media/Gmail.png" alt="Email" />
+    </a>
+  </li>
+  <li>
+    <a href="https://www.linkedin.com/in/moti-vation-96a699b/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
+      <img src="images/media/LinkedIn.png" alt="LinkedIn" />
+    </a>
+  </li>
+  <li>
+    <a href="https://www.youtube.com/@elMotoLoko" target="_blank" rel="noopener noreferrer" aria-label="YouTube">
+      <img src="images/media/YouTube.png" alt="YouTube" />
+    </a>
+  </li>
+ <li>
+    <a href="https://wa.me/48604726360" target="_blank" rel="noopener noreferrer" aria-label="WhatsApp">
+      <img src="images/media/whatsapp.png" alt="WhatsApp" />
+    </a>
+  </li>
+</ul>
+
+</aside>
+
+
+-------------------------------------------
+
+layout.js
+
+/* =========================
+   SIDEBAR LOADER
+========================= */
+
+async function loadSidebar() {
+  const placeholder = document.querySelector("[data-sidebar]");
+  if (!placeholder) return;
+
+  try {
+    const res = await fetch("/MotoSynteza/partials/sidebar.html", {
+      credentials: "same-origin",
+    });
+    if (!res.ok) throw new Error("Sidebar load failed");
+
+    const html = await res.text();
+    placeholder.innerHTML = html;
+
+    const toggle = placeholder.querySelector(".menu-toggle");
+    const menu = placeholder.querySelector(".menu");
+
+    if (toggle && menu) {
+      toggle.addEventListener("click", () => {
+        menu.classList.toggle("open");
+      });
+    }
+  } catch (err) {
+    console.error("Sidebar error:", err);
+  }
+}
+
+/* =========================
+   PROJECT LOADER (JSON)
+========================= */
+
+function getSlugFromURL(url = window.location.href) {
+  const parsed = new URL(url, window.location.origin);
+  const fromQuery = parsed.searchParams.get("project");
+  if (fromQuery) return fromQuery;
+
+  const parts = parsed.pathname.split("/").filter(Boolean);
+  const projectsIndex = parts.indexOf("projects");
+
+  if (projectsIndex !== -1 && parts[projectsIndex + 1]) {
+    return decodeURIComponent(parts[projectsIndex + 1]);
+  }
+
+  return "";
+}
+
+function removeSlideIndicator() {
+  if (window.__PROJECT_COUNTER_CLEANUP__) {
+    window.__PROJECT_COUNTER_CLEANUP__();
+    window.__PROJECT_COUNTER_CLEANUP__ = null;
+  }
+
+  const indicator = document.getElementById("slideIndicator");
+  if (indicator) indicator.remove();
+}
+
+function bindProjectLightbox() {
+  const lightbox = document.getElementById("lightbox");
+  const lightboxImg = lightbox?.querySelector("img");
+
+  if (!lightbox || !lightboxImg) return;
+
+  if (!lightbox.dataset.bound) {
+    const closeBtn = lightbox.querySelector(".lightbox-close");
+
+    lightbox.addEventListener("click", () => {
+      lightbox.classList.remove("active");
+    });
+
+    closeBtn?.addEventListener("click", (e) => {
+      e.stopPropagation();
+      lightbox.classList.remove("active");
+    });
+
+    lightbox.dataset.bound = "true";
+  }
+
+  if (!document.body.dataset.lightboxDelegated) {
+    document.addEventListener("click", (e) => {
+      if (document.body.dataset.page !== "project") return;
+
+      const clickedImage = e.target.closest(".project-gallery img");
+      if (!clickedImage) return;
+
+      const activeLightbox = document.getElementById("lightbox");
+      const activeLightboxImg = activeLightbox?.querySelector("img");
+      if (!activeLightbox || !activeLightboxImg) return;
+
+      activeLightboxImg.src = clickedImage.src;
+      activeLightbox.classList.add("active");
+    });
+
+    document.body.dataset.lightboxDelegated = "true";
+  }
+}
+
+function ensureSlideIndicator() {
+  let indicator = document.getElementById("slideIndicator");
+
+  if (!indicator) {
+    indicator = document.createElement("div");
+    indicator.id = "slideIndicator";
+    indicator.className = "slide-indicator";
+    document.body.appendChild(indicator);
+  }
+
+  return indicator;
+}
+
+function configureProjectSlideIndicator(images) {
+  const indicator = ensureSlideIndicator();
+  const total = images.length;
+
+  if (window.__PROJECT_COUNTER_CLEANUP__) {
+    window.__PROJECT_COUNTER_CLEANUP__();
+    window.__PROJECT_COUNTER_CLEANUP__ = null;
+  }
+
+  if (total <= 1) {
+    indicator.textContent = "";
+    indicator.classList.remove("is-visible");
+    return;
+  }
+
+  const updateIndicator = (index) => {
+    const safeIndex = Math.max(1, Math.min(total, index));
+    indicator.textContent = `${safeIndex} / ${total}`;
+    indicator.classList.add("is-visible");
+  };
+
+  const pane = document.querySelector(".content-pane");
+  const scrollRoot =
+    pane && pane.scrollHeight > pane.clientHeight + 1 ? pane : null;
+  const getBounds = scrollRoot
+    ? () => scrollRoot.getBoundingClientRect()
+    : () => ({ top: 0, bottom: window.innerHeight });
+
+  let ticking = false;
+
+  const updateByScroll = () => {
+    ticking = false;
+
+    const bounds = getBounds();
+    const viewportCenter = bounds.top + (bounds.bottom - bounds.top) / 2;
+
+    let closestIndex = 0;
+    let closestDistance = Number.POSITIVE_INFINITY;
+
+    images.forEach((img, index) => {
+      const rect = img.getBoundingClientRect();
+      const imgCenter = rect.top + rect.height / 2;
+      const distance = Math.abs(imgCenter - viewportCenter);
+
+      if (distance < closestDistance) {
+        closestDistance = distance;
+        closestIndex = index;
+      }
+    });
+
+    updateIndicator(closestIndex + 1);
+  };
+
+  const onScroll = () => {
+    if (ticking) return;
+    ticking = true;
+    requestAnimationFrame(updateByScroll);
+  };
+
+  const target = scrollRoot || window;
+  target.addEventListener("scroll", onScroll, { passive: true });
+  window.addEventListener("resize", onScroll);
+
+  updateIndicator(1);
+
+  window.__PROJECT_COUNTER_CLEANUP__ = () => {
+    target.removeEventListener("scroll", onScroll);
+    window.removeEventListener("resize", onScroll);
+  };
+}
+
+async function initProjectPage() {
+  if (document.body.dataset.page !== "project") {
+    if (window.__PROJECT_COUNTER_CLEANUP__) {
+      window.__PROJECT_COUNTER_CLEANUP__();
+      window.__PROJECT_COUNTER_CLEANUP__ = null;
+    }
+    removeSlideIndicator();
+    return;
+  }
+
+  const gallery = document.querySelector(".project-gallery");
+  if (!gallery) {
+    removeSlideIndicator();
+    return;
+  }
+
+  gallery.innerHTML = "";
+
+  const projectSlug = getSlugFromURL();
+  if (projectSlug) {
+    document.body.dataset.project = projectSlug;
+  }
+  if (!projectSlug) {
+    removeSlideIndicator();
+    return;
+  }
+
+  try {
+    const res = await fetch(`projects/${projectSlug}/project.json`, {
+      credentials: "same-origin",
+    });
+    if (!res.ok) throw new Error("Project JSON not found");
+
+    const data = await res.json();
+
+    data.images.forEach((imgData) => {
+      const figure = document.createElement("figure");
+      figure.className = "project-figure";
+
+      const caption = document.createElement("div");
+      caption.className = "project-caption";
+      caption.textContent = imgData.caption || "";
+
+      const img = document.createElement("img");
+      img.src = `projects/${projectSlug}/${imgData.src}`;
+      img.decode?.().then(() => {
+      img.classList.add("is-visible");
+      }).catch(() => {
+      img.classList.add("is-visible");
+      });
+      img.loading = "lazy";
+
+      gallery.appendChild(figure);
+      figure.appendChild(img);
+      figure.appendChild(caption);
+    });
+  } catch (err) {
+    console.error(err);
+  }
+
+  const images = [...document.querySelectorAll(".project-gallery img")];
+  if (!images.length) {
+    removeSlideIndicator();
+    return;
+  }
+
+  configureProjectSlideIndicator(images);
+  
+enableForwardPreload(images, projectSlug);
+
+enableDecodeFade(images);
+
+  bindProjectLightbox();
+}
+
+function runProjectsInit() {
+  if (typeof window.initProjectsPage === "function") {
+    window.initProjectsPage();
+  }
+}
+
+function runSlideshowInit() {
+  if (typeof window.initSlideshow === "function") {
+    window.initSlideshow();
+  }
+}
+
+function ensureFadeOverlay() {
+  let fade = document.getElementById("pageFade");
+
+  if (!fade) {
+    fade = document.createElement("div");
+    fade.id = "pageFade";
+    document.body.appendChild(fade);
+  }
+
+  return fade;
+}
+
+async function ensurePageScripts(doc) {
+  const scripts = [...doc.querySelectorAll("script[src]")]
+    .map((script) => script.getAttribute("src"))
+    .filter(Boolean)
+    .filter((src) => !src.includes("layout.js"));
+
+  for (const src of scripts) {
+    if (document.querySelector(`script[src="${src}"]`)) continue;
+
+    await new Promise((resolve, reject) => {
+      const script = document.createElement("script");
+      script.src = src;
+      script.onload = resolve;
+      script.onerror = reject;
+      document.body.appendChild(script);
+    });
+  }
+}
+
+function syncBodyState(doc, url) {
+  if (!doc?.body) return;
+
+  document.body.className = doc.body.className;
+
+  const { page } = doc.body.dataset;
+
+  if (page) {
+    document.body.dataset.page = page;
+  } else {
+    delete document.body.dataset.page;
+  }
+
+  const slug = getSlugFromURL(url || window.location.href);
+  if (slug) {
+    document.body.dataset.project = slug;
+  } else {
+    delete document.body.dataset.project;
+  }
+}
+
+function syncOptionalShellElements(doc) {
+  const optionalSelectors = ["#lightbox", "#slideIndicator"];
+
+  optionalSelectors.forEach((selector) => {
+    const incoming = doc.querySelector(selector);
+    const current = document.querySelector(selector);
+
+    if (incoming && current) {
+      current.replaceWith(incoming.cloneNode(true));
+      return;
+    }
+
+    if (incoming && !current) {
+      document.body.appendChild(incoming.cloneNode(true));
+      return;
+    }
+
+    if (!incoming && current && selector === "#slideIndicator") {
+      current.remove();
+    }
+  });
+}
+
+async function loadPage(url, push = true) {
+  const fade = ensureFadeOverlay();
+
+  try {
+    fade.classList.add("active");
+    await new Promise((r) => setTimeout(r, 300));
+
+    const res = await fetch(url, { credentials: "same-origin" });
+    if (!res.ok) throw new Error("PJAX fetch failed");
+
+    const html = await res.text();
+    const parser = new DOMParser();
+    const doc = parser.parseFromString(html, "text/html");
+
+    const newContent = doc.querySelector(".content-pane");
+    const currentContent = document.querySelector(".content-pane");
+    const newSidebar = doc.querySelector("[data-sidebar]");
+    const currentSidebar = document.querySelector("[data-sidebar]");
+
+    if (!newContent || !currentContent || !newSidebar || !currentSidebar) {
+      throw new Error("PJAX shell missing");
+    }
+
+    syncBodyState(doc, url);
+    currentSidebar.replaceWith(newSidebar);
+    currentContent.replaceWith(newContent);
+    syncOptionalShellElements(doc);
+
+    const landingOverlay = document.getElementById("landing-overlay");
+    if (landingOverlay && doc.getElementById("landing-overlay") === null) {
+      landingOverlay.remove();
+    }
+
+    if (doc.title) document.title = doc.title;
+    if (push) history.pushState({}, "", url);
+
+    await ensurePageScripts(doc);
+    await initPage();
+
+    await new Promise((r) => setTimeout(r, 50));
+    fade.classList.remove("active");
+  } catch (err) {
+    window.location.href = url;
+  }
+}
+
+function initFullscreenLightboxSync() {
+  if (window.__FULLSCREEN_LIGHTBOX_SYNC_READY__) return;
+  window.__FULLSCREEN_LIGHTBOX_SYNC_READY__ = true;
+
+  document.addEventListener("fullscreenchange", () => {
+    bindProjectLightbox();
+  });
+}
+
+function initPjaxNavigation() {
+  if (window.__PJAX_READY__) return;
+  window.__PJAX_READY__ = true;
+
+  document.addEventListener("click", (e) => {
+    const link = e.target.closest("a");
+    if (!link) return;
+    if (link.id === "enterBtn") return;
+    if (link.target === "_blank") return;
+    if (link.hasAttribute("download")) return;
+    if (e.metaKey || e.ctrlKey || e.shiftKey || e.altKey) return;
+
+    const rawHref = link.getAttribute("href");
+    if (!rawHref || rawHref.startsWith("#")) return;
+
+    const url = new URL(link.href, window.location.href);
+
+    if (url.origin !== location.origin) return;
+    if (url.pathname === location.pathname && url.search === location.search)
+      return;
+
+    e.preventDefault();
+    loadPage(`${url.pathname}${url.search}${url.hash}`);
+  });
+
+  window.addEventListener("popstate", () => {
+    loadPage(`${location.pathname}${location.search}${location.hash}`, false);
+  });
+}
+
+async function initPage() {
+  ensureFadeOverlay();
+  await loadSidebar();
+  runProjectsInit();
+  await initProjectPage();
+  runSlideshowInit();
+  initFullscreenLightboxSync();
+  initPjaxNavigation();
+}
+
+function enableForwardPreload(images, projectSlug) {
+  if (!images.length) return;
+
+  const preloaded = new Set();
+
+  const preloadImage = (index) => {
+    if (index >= images.length) return;
+    if (preloaded.has(index)) return;
+
+    const src = images[index].getAttribute("src");
+    if (!src) return;
+
+    const img = new Image();
+    img.src = src;
+
+    preloaded.add(index);
+  };
+
+  const observer = new IntersectionObserver(
+    (entries) => {
+      entries.forEach((entry) => {
+        if (!entry.isIntersecting) return;
+
+        const currentIndex = images.indexOf(entry.target);
+        if (currentIndex === -1) return;
+
+        preloadImage(currentIndex + 1);
+        preloadImage(currentIndex + 2);
+      });
+    },
+    {
+      root: null,
+      rootMargin: "777px 0px",
+      threshold: 0.1,
+    }
+  );
+
+  images.forEach((img) => observer.observe(img));
+}
+
+function enableDecodeFade(images) {
+  images.forEach((img) => {
+    if (img.complete) {
+      img.classList.add("is-ready");
+      return;
+    }
+
+    img.addEventListener("load", async () => {
+      try {
+        if (img.decode) {
+          await img.decode();
+        }
+      } catch (e) {}
+
+      img.classList.add("is-ready");
+    });
+  });
+}
+
+window.loadPage = loadPage;
+document.addEventListener("DOMContentLoaded", initPage);
+
+
+--------------------------------------
+
+projects.js
+
+function initProjectsPage() {
+  const listEl = document.getElementById("projects-list");
+  if (!listEl || listEl.dataset.initialized === "true") return;
+
+  const manifest = window.__PROJECTS__;
+
+  if (!Array.isArray(manifest) || manifest.length === 0) {
+    console.warn("Projects manifest is missing or empty.");
+    return;
+  }
+
+  listEl.dataset.initialized = "true";
+
+  manifest.forEach((project, index) => {
+    if (!project?.slug || !project?.title) return;
+
+    const section = document.createElement("section");
+    section.className =
+      "project-item " +
+      (index % 2 === 0 ? "bg-1" : "bg-2") +
+      (index % 2 === 1 ? " reverse" : "");
+
+    const grid = document.createElement("div");
+    grid.className = "project-grid";
+
+    const href = `project.html?project=${encodeURIComponent(project.slug)}`;
+
+    const link = document.createElement("a");
+    link.href = href;
+    link.className = "project-link";
+
+    const media = document.createElement("img");
+    media.className = "project-media";
+    media.alt = project.title;
+    media.loading = index === 0 ? "eager" : "lazy";
+
+    if (project.cover) {
+      media.src = `projects/${project.slug}/${project.cover}`;
+    } else {
+      media.classList.add("placeholder");
+    }
+
+    media.onerror = () => {
+      media.classList.add("placeholder");
+      media.removeAttribute("src");
+    };
+
+    link.appendChild(media);
+
+    const textLink = document.createElement("a");
+    textLink.href = href;
+    textLink.className = "project-text";
+
+    const h2 = document.createElement("h2");
+    h2.textContent = project.title;
+
+    const p = document.createElement("p");
+    p.innerHTML = `
+      ${project.description || ""}
+      <span class="enter">ENTER →</span>
+    `;
+
+    textLink.appendChild(h2);
+    textLink.appendChild(p);
+
+    if (index % 2 === 0) {
+      grid.appendChild(link);
+      grid.appendChild(textLink);
+    } else {
+      grid.appendChild(textLink);
+      grid.appendChild(link);
+    }
+
+    section.appendChild(grid);
+    listEl.appendChild(section);
+
+    if (index < manifest.length - 1) {
+      const sep = document.createElement("div");
+      sep.className = "separator";
+      listEl.appendChild(sep);
+    }
+  });
+
+  /* אחרי שכל ה-DOM נבנה */
+  const covers = [...document.querySelectorAll(".project-media")];
+  enableProjectsForwardPreload(covers);
+  enableDecodeFade(covers);
+}
+
+/* ===== Preload 2 קדימה ===== */
+
+function enableProjectsForwardPreload(images) {
+  if (!images.length) return;
+
+  const preloaded = new Set();
+
+  const preloadImage = (index) => {
+    if (index >= images.length) return;
+    if (preloaded.has(index)) return;
+
+    const src = images[index].getAttribute("src");
+    if (!src) return;
+
+    const img = new Image();
+    img.src = src;
+
+    preloaded.add(index);
+  };
+
+  const observer = new IntersectionObserver(
+    (entries) => {
+      entries.forEach((entry) => {
+        if (!entry.isIntersecting) return;
+
+        const currentIndex = images.indexOf(entry.target);
+        if (currentIndex === -1) return;
+
+        preloadImage(currentIndex + 1);
+        preloadImage(currentIndex + 2);
+      });
+    },
+    {
+      rootMargin: "777px 0px",
+      threshold: 0.1,
+    }
+  );
+
+  images.forEach((img) => observer.observe(img));
+}
+
+/* ===== Decode + Fade ===== */
+
+function enableDecodeFade(images) {
+  images.forEach((img) => {
+    if (img.complete) {
+      img.classList.add("is-ready");
+      return;
+    }
+
+    img.addEventListener("load", async () => {
+      try {
+        if (img.decode) {
+          await img.decode();
+        }
+      } catch (e) {}
+
+      img.classList.add("is-ready");
+    });
+  });
+}
+
+window.initProjectsPage = initProjectsPage;
+document.addEventListener("DOMContentLoaded", initProjectsPage);
+
+-------------------------------------------
+
+project.json
+
+{
+  "title": "Unusual Usual",
+  "description": "A collection of small moments from everyday life — presented from an original perspective with a touch of humor, drama, and poetry.",
+  "images": [
+    { "src": "01.jpg", "caption": "" },
+    { "src": "02.jpg", "caption": "" },
+    { "src": "03.jpg", "caption": "" },
+    { "src": "04.jpg", "caption": "" },
+    { "src": "05.jpg", "caption": "" },
+    { "src": "06.jpg", "caption": "" },
+    { "src": "07.jpg", "caption": "Crossroads Square" },
+    { "src": "08.jpg", "caption": "" },
+    { "src": "09.jpg", "caption": "" },
+    { "src": "10.jpg", "caption": "" },
+    { "src": "11.jpg", "caption": "" },
+    { "src": "12.jpg", "caption": "" },
+    { "src": "13.jpg", "caption": "" },
+    { "src": "14.jpg", "caption": "" },
+    { "src": "15.jpg", "caption": "" },
+    { "src": "16.jpg", "caption": "" },
+    { "src": "17.jpg", "caption": "" },
+    { "src": "18.jpg", "caption": "happy valentine's" },
+    { "src": "19.jpg", "caption": "Misic is the silence between the Notes" },
+    { "src": "20.jpg", "caption": "After party" },
+    { "src": "21.jpg", "caption": "Solar Power" },
+    { "src": "22.jpg", "caption": "Solar Power #2" },
+    { "src": "23.jpg", "caption": "Solar Power #3" },
+    { "src": "24.jpg", "caption": "Make a wish to the Ginnie" },
+    { "src": "25.jpg", "caption": "" },
+    { "src": "26.jpg", "caption": "kiss me honey honey kiss me" },
+    { "src": "27.jpg", "caption": "" },
+    { "src": "28.jpg", "caption": "" },
+    { "src": "29.jpg", "caption": "" },
+    { "src": "30.jpg", "caption": "" },
+    { "src": "31.jpg", "caption": "" },
+    { "src": "32.jpg", "caption": "" },
+    { "src": "33.jpg", "caption": "" },
+    { "src": "34.jpg", "caption": "" }
+
+  ]
+}
+
+---------------------------------------------
+
+scanner.js
+
+const fs = require('fs');
+const path = require('path');
+
+class Scanner {
+  constructor(logger) {
+    this.logger = logger;
+    this.excludeDirs = [
+      '.git',
+      '__pycache__',
+      'node_modules',
+      'docs',
+      '.build-temp',
+      '.docs-backup'
+    ];
+
+    this.imageExtensions = ['.jpg', '.jpeg', '.png', '.gif', '.webp', '.svg'];
+    this.fontExtensions = ['.woff2', '.woff', '.ttf', '.otf', '.eot'];
+  }
+
+  scanDirectory(dir, extensions = [], additionalExcludes = [], rootDir = dir) {
+    const results = [];
+    if (!fs.existsSync(dir)) return results;
+
+    let entries;
+    try {
+      entries = fs.readdirSync(dir, { withFileTypes: true });
+    } catch (err) {
+      return results;
+    }
+
+    for (const entry of entries) {
+      const fullPath = path.join(dir, entry.name);
+
+      if (entry.isDirectory()) {
+        if (this.shouldExclude(entry.name, additionalExcludes)) continue;
+
+        results.push(
+          ...this.scanDirectory(fullPath, extensions, additionalExcludes, rootDir)
+        );
+      } else {
+        if (
+          extensions.length === 0 ||
+          extensions.includes(path.extname(entry.name).toLowerCase())
+        ) {
+          const relative = path
+            .relative(rootDir, fullPath)
+            .replace(/\\/g, '/');
+
+          results.push(relative);
+        }
+      }
+    }
+
+    return results.sort();
+  }
+
+  shouldExclude(name, additionalExcludes = []) {
+    if (name.startsWith('.')) return true;
+    if (this.excludeDirs.includes(name)) return true;
+    if (additionalExcludes.includes(name)) return true;
+    return false;
+  }
+
+  findHtmlFiles(rootDir) {
+    if (!fs.existsSync(rootDir)) return [];
+
+    const files = fs.readdirSync(rootDir);
+    const htmlFiles = [];
+
+    for (const file of files) {
+      if (!file.endsWith('.html')) continue;
+
+      const fullPath = path.join(rootDir, file);
+
+      try {
+        const content = fs.readFileSync(fullPath, 'utf8');
+        if (/<head[^>]*>/i.test(content)) {
+          htmlFiles.push(file);
+        }
+      } catch (err) {
+        continue;
+      }
+    }
+
+    return htmlFiles.sort();
+  }
+
+  findFonts(dir, limit = 2) {
+    const allFonts = this.scanDirectory(
+      dir,
+      this.fontExtensions,
+      [],
+      dir
+    );
+
+    return allFonts.slice(0, limit);
+  }
+
+  scanImagesForManifest(imagesDir, rootDir) {
+    if (!rootDir) rootDir = process.cwd();
+
+    const manifest = {
+      landing: {
+        desktop: [],
+        mobile: []
+      },
+      main: [],
+      projects: []
+    };
+
+    if (fs.existsSync(imagesDir)) {
+      const landingDir = path.join(imagesDir, 'landing');
+      const mainDir = path.join(imagesDir, 'main');
+
+      // ===== LANDING IMAGES =====
+      if (fs.existsSync(landingDir)) {
+        const desktopDir = path.join(landingDir, 'desktop');
+        const mobileDir = path.join(landingDir, 'mobile');
+
+        // new structure
+        if (fs.existsSync(desktopDir) || fs.existsSync(mobileDir)) {
+          manifest.landing.desktop = fs.existsSync(desktopDir)
+            ? this.getImageFiles(desktopDir, imagesDir)
+            : [];
+
+          manifest.landing.mobile = fs.existsSync(mobileDir)
+            ? this.getImageFiles(mobileDir, imagesDir)
+            : [];
+        } else {
+          // fallback: old structure (images directly in landing/)
+          manifest.landing.desktop = this.getImageFiles(landingDir, imagesDir);
+        }
+      }
+
+      // ===== MAIN IMAGES =====
+      if (fs.existsSync(mainDir)) {
+        manifest.main = this.getImageFiles(mainDir, imagesDir);
+      }
+    }
+
+    // ===== PROJECTS =====
+    const projectsDir = path.join(rootDir, 'projects');
+    if (fs.existsSync(projectsDir)) {
+      manifest.projects = this.scanProjects(projectsDir);
+    }
+
+    return manifest;
+  }
+
+  getImageFiles(dir, imagesRoot) {
+    if (!fs.existsSync(dir)) return [];
+
+    let files;
+    try {
+      files = fs.readdirSync(dir);
+    } catch (err) {
+      return [];
+    }
+
+    return files
+      .filter(f =>
+        this.imageExtensions.includes(path.extname(f).toLowerCase())
+      )
+      .sort()
+      .map(f =>
+        'images/' +
+        path
+          .relative(imagesRoot, path.join(dir, f))
+          .replace(/\\/g, '/')
+      );
+  }
+
+  scanProjects(projectsDir) {
+    return this.scanProjectsFromSource(projectsDir, projectsDir);
+  }
+
+  getProjectsSourceDir(rootDir) {
+    const srcProjectsDir = path.join(rootDir, 'src', 'projects');
+    if (fs.existsSync(srcProjectsDir)) return srcProjectsDir;
+
+    return path.join(rootDir, 'projects');
+  }
+
+  scanProjectsFromRoot(rootDir) {
+    const sourceDir = this.getProjectsSourceDir(rootDir);
+    return this.scanProjectsFromSource(sourceDir, rootDir);
+  }
+
+  scanProjectsFromSource(sourceDir, rootDir) {
+    const projects = [];
+
+    if (!fs.existsSync(sourceDir)) {
+      throw new Error(`Projects source directory not found: ${path.relative(rootDir, sourceDir)}`);
+    }
+
+    let entries;
+    try {
+      entries = fs.readdirSync(sourceDir, { withFileTypes: true });
+    } catch (err) {
+      throw new Error(`Unable to scan projects directory: ${path.relative(rootDir, sourceDir)}`);
+    }
+
+    for (const entry of entries.sort((a, b) => a.name.localeCompare(b.name))) {
+      if (!entry.isDirectory()) continue;
+
+      const projectPath = path.join(sourceDir, entry.name);
+      const projectJsonPath = path.join(projectPath, 'project.json');
+
+      if (!fs.existsSync(projectJsonPath)) {
+        this.logger.warn(`Skipping project folder without project.json: ${path.relative(rootDir, projectPath)}`);
+        continue;
+      }
+
+      const project = this.parseProject(projectPath, entry.name, rootDir);
+      projects.push(project);
+    }
+
+    return projects;
+  }
+
+  parseProject(projectPath, slug, rootDir = process.cwd()) {
+    const projectJsonPath = path.join(projectPath, 'project.json');
+
+    let metadata;
+    try {
+      metadata = JSON.parse(fs.readFileSync(projectJsonPath, 'utf8'));
+    } catch (err) {
+      throw new Error(`Invalid JSON in ${path.relative(rootDir, projectJsonPath)}: ${err.message}`);
+    }
+
+    if (!metadata || typeof metadata !== 'object') {
+      throw new Error(`Invalid project.json structure in ${path.relative(rootDir, projectJsonPath)}`);
+    }
+
+    if (typeof metadata.title !== 'string' || !metadata.title.trim()) {
+      throw new Error(`Missing required "title" in ${path.relative(rootDir, projectJsonPath)}`);
+    }
+
+    if (!Array.isArray(metadata.images)) {
+      throw new Error(`Missing required "images" array in ${path.relative(rootDir, projectJsonPath)}`);
+    }
+
+    const images = metadata.images.map((image, index) => {
+      if (!image || typeof image.src !== 'string' || !image.src.trim()) {
+        throw new Error(`Invalid images[${index}] in ${path.relative(rootDir, projectJsonPath)} (missing src)`);
+      }
+
+      const imagePath = path.join(projectPath, image.src);
+      if (!fs.existsSync(imagePath)) {
+        throw new Error(`Image not found for ${path.relative(rootDir, projectJsonPath)}: ${image.src}`);
+      }
+
+      return {
+        src: image.src,
+        caption: typeof image.caption === 'string' ? image.caption : ''
+      };
+    });
+
+    const description = typeof metadata.description === 'string' ? metadata.description : '';
+
+    return {
+      slug,
+      title: metadata.title.trim(),
+      description,
+      images
+    };
+  }
+}
+
+module.exports = Scanner;
+
+
+----------------------------------------
+
+manifest-generator.js
+
+// build/manifest-generator.js
+const fs = require('fs');
+const path = require('path');
+
+class ManifestGenerator {
+  constructor(logger) {
+    this.logger = logger;
+  }
+
+  /**
+   * Generate image-manifest.js file
+   */
+  generate(manifestData, outputPath) {
+    const content = this.buildManifestContent(manifestData);
+    
+    // Ensure directory exists
+    const dir = path.dirname(outputPath);
+    if (!fs.existsSync(dir)) {
+      fs.mkdirSync(dir, { recursive: true });
+    }
+    
+    fs.writeFileSync(outputPath, content, 'utf8');
+    this.logger.info(`Generated manifest: ${path.relative(process.cwd(), outputPath)}`);
+    
+    return outputPath;
+  }
+
+  buildManifestContent(data) {
+    // Deterministic JSON serialization
+    const json = JSON.stringify(data, null, 2);
+    
+    return `window.__MANIFEST__ = ${json};\n`;
+  }
+
+  /**
+   * Create manifest data structure
+   */
+   createManifestData(scanner, imagesDir, rootDir) {
+    return scanner.scanImagesForManifest(imagesDir, rootDir);
+
+  }
+}
+
+module.exports = ManifestGenerator;
+
+
+--------------------------------------------
+
+
+head-orchestrator.js
+
+
+
+// build/head-orchestrator.js
+
+class HeadOrchestrator {
+  constructor({ logger, renameMap, manifestData, version, assets, htmlFile }) {
+    this.logger = logger;
+    this.renameMap = renameMap;
+    this.manifestData = manifestData;
+    this.version = version;
+    this.assets = assets || {};
+    this.htmlFile = htmlFile;
+  }
+
+  buildHead(html) {
+    const headMatch = html.match(/(<head[^>]*>)([\s\S]*?)(<\/head>)/i);
+    if (!headMatch) throw new Error('No <head> tag found');
+
+    const [fullHead, openTag, innerContent, closeTag] = headMatch;
+
+    const tags = [];
+
+    // ================= BASE =================
+    tags.push('<meta charset="UTF-8">');
+    tags.push('<meta name="viewport" content="width=device-width, initial-scale=1">');
+    tags.push('<meta name="theme-color" content="#000000">');
+
+    // ================= TITLE =================
+    const titleMatch = innerContent.match(/<title>[\s\S]*?<\/title>/i);
+    const title = titleMatch ? titleMatch[0] : '<title>MotoSynteza</title>';
+    tags.push(title);
+
+    const cleanTitle = title.replace(/<\/?title>/gi, '').trim();
+
+    // ================= DESCRIPTION =================
+    const description =
+      this.extractMeta(innerContent, 'description') ||
+      'MotoSynteza – conceptual photography and visual storytelling.';
+
+    tags.push(`<meta name="description" content="${description}">`);
+
+    // ================= CANONICAL =================
+    const canonical = this.buildCanonical();
+    if (canonical) {
+      tags.push(`<link rel="canonical" href="${canonical}">`);
+    }
+
+    // ================= OG =================
+    tags.push(`<meta property="og:title" content="${cleanTitle}">`);
+    tags.push(`<meta property="og:description" content="${description}">`);
+    tags.push('<meta property="og:type" content="website">');
+
+    if (canonical) {
+      tags.push(`<meta property="og:url" content="${canonical}">`);
+    }
+
+    const ogImage = this.getOgImage();
+    if (ogImage) {
+      tags.push(`<meta property="og:image" content="${ogImage}">`);
+    }
+
+    // ================= TWITTER =================
+    tags.push('<meta name="twitter:card" content="summary_large_image">');
+    tags.push(`<meta name="twitter:title" content="${cleanTitle}">`);
+    tags.push(`<meta name="twitter:description" content="${description}">`);
+
+    if (ogImage) {
+      tags.push(`<meta name="twitter:image" content="${ogImage}">`);
+    }
+
+    // ================= CSS =================
+    const cssPath = this.getHashedCss();
+    if (cssPath) {
+      tags.push(`<link rel="stylesheet" href="${cssPath}">`);
+      tags.push(`<link rel="preload" href="${cssPath}" as="style">`);
+    }
+
+    // ================= FAVICONS =================
+    tags.push(...this.buildFavicons());
+
+    // ================= PRELOAD LANDING IMAGE =================
+    if (this.isLanding() || this.isMain()) {
+      const preload = this.getLandingPreload();
+      if (preload) tags.push(preload);
+    }
+
+    // ================= VERSION SCRIPT =================
+    if (this.assets.versionScriptPath) {
+      tags.push(`<script src="${this.assets.versionScriptPath}"></script>`);
+    }
+
+    // ================= OTHER SCRIPTS =================
+    const scripts =
+      innerContent.match(/<script[^>]*src=["'][^"']+["'][^>]*><\/script>/gi) || [];
+
+    scripts
+      .filter(s => !/build-version\./i.test(s))
+      .forEach(s => tags.push(s));
+
+    // ================= CSP =================
+    if (this.assets.cspPolicy) {
+      tags.push(
+        `<meta http-equiv="Content-Security-Policy" content="${this.assets.cspPolicy}">`
+      );
+    }
+
+    const newHead =
+      openTag +
+      '\n' +
+      tags.map(t => `  ${t}`).join('\n') +
+      '\n' +
+      closeTag;
+
+    return html.replace(fullHead, newHead);
+  }
+
+  // =========================================================
+
+  extractMeta(content, name) {
+    const match = content.match(
+      new RegExp(
+        `<meta[^>]*name=["']${name}["'][^>]*content=["']([^"']+)["'][^>]*>`,
+        'i'
+      )
+    );
+    return match ? match[1] : null;
+  }
+
+  buildCanonical() {
+    const base = 'https://motimorphoza.github.io/MotoSynteza/';
+    const fileName = this.htmlFile.split(/[\\/]/).pop();
+    return base + fileName;
+  }
+
+  getHashedCss() {
+    for (const [oldPath, newPath] of this.renameMap.entries()) {
+      if (oldPath.startsWith('css/') && oldPath.endsWith('.css')) {
+        return newPath;
+      }
+    }
+    return null;
+  }
+
+  buildFavicons() {
+    const tags = [];
+
+    for (const [oldPath, newPath] of this.renameMap.entries()) {
+      if (!oldPath.includes('favicon')) continue;
+
+      if (oldPath.includes('32')) {
+        tags.push(`<link rel="icon" type="image/png" sizes="32x32" href="${newPath}">`);
+      }
+
+      if (oldPath.includes('180')) {
+        tags.push(`<link rel="apple-touch-icon" sizes="180x180" href="${newPath}">`);
+      }
+
+      if (oldPath.includes('512')) {
+        tags.push(`<link rel="icon" type="image/png" sizes="512x512" href="${newPath}">`);
+      }
+
+      if (/favicon\.png$/i.test(oldPath)) {
+        tags.push(`<link rel="icon" href="${newPath}">`);
+      }
+    }
+
+    return tags;
+  }
+
+  // ================= OG IMAGE LOGIC =================
+
+getOgImage() {
+  const base = 'https://motimorphoza.github.io/MotoSynteza/';
+
+  // ===== PROJECT PAGE =====
+  if (this.isProject() && Array.isArray(this.manifestData?.projects)) {
+    const fileName = this.htmlFile.split(/[\\/]/).pop();
+    const projectKey = fileName
+      .replace('project-', '')
+      .replace('.html', '');
+
+    const project = this.manifestData.projects.find(
+      p => p.slug === projectKey
+    );
+
+    if (project && project.images && project.images.length) {
+      const first = project.images[0];
+      const resolved = this.renameMap.get(first) || first;
+      return base + resolved;
+    }
+  }
+
+  // ===== FALLBACK og-cover =====
+  for (const [oldPath, newPath] of this.renameMap.entries()) {
+    if (oldPath.includes('og-cover')) {
+      return base + newPath;
+    }
+  }
+
+  return null;
+}
+
+
+  getLandingPreload() {
+    if (!this.manifestData?.landing?.length) return null;
+
+    const first = this.manifestData.landing[0];
+    const resolved = this.renameMap.get(first) || first;
+
+    return `<link rel="preload" href="${resolved}" as="image">`;
+  }
+
+  isLanding() {
+    return this.htmlFile.endsWith('index.html');
+  }
+
+  isMain() {
+    return this.htmlFile.endsWith('main.html');
+  }
+
+  isProject() {
+    return this.htmlFile.includes('project-');
+  }
+}
+
+module.exports = HeadOrchestrator;
+
+
+-------------------------------------------
+
+
+html-processor.js
+
+
+// build/html-processor.js
+const fs = require('fs');
+const path = require('path');
+
+class HtmlProcessor {
+  constructor(logger) {
+    this.logger = logger;
+  }
+
+  // ================================
+  // FULL HTML FILES (require <head>)
+  // ================================
+  processHtmlFiles(htmlFiles, buildDir, renameMap) {
+    for (const htmlFile of htmlFiles) {
+      const filePath = path.join(buildDir, htmlFile);
+      this.processFile(filePath, renameMap, buildDir);
+    }
+
+    this.logger.updateStats('htmlFiles', htmlFiles.length);
+  }
+
+  processFile(filePath, renameMap, buildDir) {
+    let content = fs.readFileSync(filePath, 'utf8');
+
+    if (!/<head[^>]*>/i.test(content)) {
+      throw new Error(
+        `HTML file missing <head>: ${path.relative(buildDir, filePath)}`
+      );
+    }
+
+    content = this.updateAssetReferences(
+      content,
+      renameMap,
+      filePath,
+      buildDir
+    );
+
+    fs.writeFileSync(filePath, content, 'utf8');
+  }
+
+  // ================================
+  // FRAGMENTS / PARTIALS (no <head>)
+  // ================================
+  processFragment(filePath, renameMap, buildDir) {
+    let content = fs.readFileSync(filePath, 'utf8');
+
+    content = this.updateAssetReferences(
+      content,
+      renameMap,
+      filePath,
+      buildDir
+    );
+
+    fs.writeFileSync(filePath, content, 'utf8');
+  }
+
+  // ================================
+  // UPDATE REFERENCES
+  // ================================
+  updateAssetReferences(html, renameMap, htmlFilePath, buildDir) {
+    html = this.updateStylesheets(html, renameMap, htmlFilePath, buildDir);
+    html = this.updateScripts(html, renameMap, htmlFilePath, buildDir);
+    html = this.updateImages(html, renameMap, htmlFilePath, buildDir);
+    html = this.updateInlineStyles(html, renameMap, htmlFilePath, buildDir);
+    html = this.updateMetaContent(html, renameMap, htmlFilePath, buildDir);
+
+    return html;
+  }
+
+  updateStylesheets(html, renameMap, htmlFilePath, buildDir) {
+    const regex = /<link\s+([^>]*?)href=["']([^"']+)["']([^>]*?)>/gi;
+
+    return html.replace(regex, (match, before, href, after) => {
+      if (!/rel\s*=\s*["']stylesheet["']/i.test(match)) return match;
+      if (this.isExternal(href)) return match;
+
+      const newHref = this.resolveNewPath(
+        href,
+        renameMap,
+        htmlFilePath,
+        buildDir
+      );
+
+      return newHref !== href
+        ? `<link ${before}href="${newHref}"${after}>`
+        : match;
+    });
+  }
+
+  updateScripts(html, renameMap, htmlFilePath, buildDir) {
+    const regex = /<script\s+([^>]*?)src=["']([^"']+)["']([^>]*?)>/gi;
+
+    return html.replace(regex, (match, before, src, after) => {
+      if (this.isExternal(src)) return match;
+
+      const newSrc = this.resolveNewPath(
+        src,
+        renameMap,
+        htmlFilePath,
+        buildDir
+      );
+
+      return newSrc !== src
+        ? `<script ${before}src="${newSrc}"${after}>`
+        : match;
+    });
+  }
+
+  updateImages(html, renameMap, htmlFilePath, buildDir) {
+    const regex = /<img\s+([^>]*?)src=["']([^"']+)["']([^>]*?)>/gi;
+
+    return html.replace(regex, (match, before, src, after) => {
+      if (this.isExternal(src)) return match;
+
+      const newSrc = this.resolveNewPath(
+        src,
+        renameMap,
+        htmlFilePath,
+        buildDir
+      );
+
+      return newSrc !== src
+        ? `<img ${before}src="${newSrc}"${after}>`
+        : match;
+    });
+  }
+
+  updateInlineStyles(html, renameMap, htmlFilePath, buildDir) {
+    const regex = /url\(["']?([^"')]+)["']?\)/gi;
+
+    return html.replace(regex, (match, assetPath) => {
+      if (this.isExternal(assetPath)) return match;
+
+      const newPath = this.resolveNewPath(
+        assetPath,
+        renameMap,
+        htmlFilePath,
+        buildDir
+      );
+
+      return newPath !== assetPath
+        ? `url("${newPath}")`
+        : match;
+    });
+  }
+
+  updateMetaContent(html, renameMap, htmlFilePath, buildDir) {
+    const regex = /(content|href)=["']([^"']+)["']/gi;
+
+    return html.replace(regex, (match, attr, value) => {
+      if (this.isExternal(value)) return match;
+
+      const newValue = this.resolveNewPath(
+        value,
+        renameMap,
+        htmlFilePath,
+        buildDir
+      );
+
+      return newValue !== value
+        ? `${attr}="${newValue}"`
+        : match;
+    });
+  }
+
+  // ================================
+  // VERIFY
+  // ================================
+  verifyReferences(htmlFiles, buildDir) {
+    for (const htmlFile of htmlFiles) {
+      const filePath = path.join(buildDir, htmlFile);
+      const content = fs.readFileSync(filePath, 'utf8');
+
+      this.verifyAssets(content, filePath, buildDir);
+    }
+  }
+
+  verifyAssets(html, htmlFilePath, buildDir) {
+    const regex = /(src|href)=["']([^"']+)["']/gi;
+    let match;
+
+    while ((match = regex.exec(html)) !== null) {
+      const value = match[2];
+      if (this.isExternal(value)) continue;
+
+      this.checkFileExists(value, htmlFilePath, buildDir);
+    }
+  }
+
+  checkFileExists(href, htmlFilePath, buildDir) {
+  let filePath;
+
+  if (href.startsWith('/')) {
+    filePath = path.join(buildDir, href.substring(1));
+  } else {
+    const htmlDir = path.dirname(htmlFilePath);
+    filePath = path.resolve(htmlDir, href);
+  }
+
+  // If not found, try resolving from build root (for partials)
+  if (!fs.existsSync(filePath)) {
+    const rootAttempt = path.join(buildDir, href);
+    if (fs.existsSync(rootAttempt)) {
+      return;
+    }
+
+    throw new Error(
+      `Missing file: ${href} (from ${path.relative(
+        buildDir,
+        htmlFilePath
+      )})`
+    );
+  }
+}
+
+  // ================================
+  // HELPERS
+  // ================================
+  isExternal(url) {
+  if (!url) return true;
+
+  return (
+    url.startsWith('#') ||             // anchors
+    url.startsWith('javascript:') ||   // inline JS
+    url.startsWith('http://') ||
+    url.startsWith('https://') ||
+    url.startsWith('//') ||
+    url.startsWith('mailto:') ||
+    url.startsWith('data:')
+  );
+}
+
+  resolveNewPath(href, renameMap, htmlFilePath, buildDir) {
+  if (!href) return href;
+
+  // Normalize
+  const cleanHref = href.replace(/\\/g, '/');
+
+  // Direct match (most important for images/media in partials)
+  if (renameMap.has(cleanHref)) {
+    return renameMap.get(cleanHref);
+  }
+
+  // Relative to file
+  const htmlDir = path.dirname(htmlFilePath);
+  const absolutePath = path.resolve(htmlDir, cleanHref);
+  const relativeFromBuild = path
+    .relative(buildDir, absolutePath)
+    .replace(/\\/g, '/');
+
+  if (renameMap.has(relativeFromBuild)) {
+    return renameMap.get(relativeFromBuild);
+  }
+
+  return href;
+}
+}
+module.exports = HtmlProcessor;
+
+
+-----------------------------------------
+
+csp-injector.js
+
+
+// build/csp-injector.js
+// STUB: Functionality moved to HeadOrchestrator
+// Kept for import compatibility
+
+class CspInjector {
+  constructor(logger) {
+    this.logger = logger;
+  }
+
+  injectCsp(htmlFiles, buildDir) {
+    // No-op: handled by HeadOrchestrator
+    this.logger.debug('CspInjector is deprecated - using HeadOrchestrator');
+  }
+}
+
+module.exports = CspInjector;
+
+
+--------------------------
+
+
+
+preload-injector.js
+
+
+// build/preload-injector.js
+// STUB: Functionality moved to HeadOrchestrator
+// Kept for import compatibility
+
+class PreloadInjector {
+  constructor(logger) {
+    this.logger = logger;
+  }
+
+  injectPreloads(htmlFiles, buildDir, renameMap, manifest, scanner) {
+    // No-op: handled by HeadOrchestrator
+    this.logger.debug('PreloadInjector is deprecated - using HeadOrchestrator');
+  }
+}
+
+module.exports = PreloadInjector;
+
+
+------------------------------------------
+
+
+
+
+
+
+
+
