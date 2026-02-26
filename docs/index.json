@@ -1,0 +1,1551 @@
+{
+  "generated": "2026-02-26T11:29:16.295Z",
+  "version": "1.0",
+  "projects": [
+    {
+      "projectCode": "0 ",
+      "slug": "000 - unusuall_usual",
+      "title": "Unusual Usual",
+      "description": "A collection of small moments from everyday life — presented from an original perspective with a touch of humor, drama, and poetry.",
+      "folder": "projects/000 - unusuall_usual",
+      "cover": "01.jpg",
+      "images": [
+        {
+          "code": "0 -001",
+          "src": "01.jpg",
+          "caption": ""
+        },
+        {
+          "code": "0 -002",
+          "src": "02.jpg",
+          "caption": ""
+        },
+        {
+          "code": "0 -003",
+          "src": "03.jpg",
+          "caption": ""
+        },
+        {
+          "code": "0 -004",
+          "src": "04.jpg",
+          "caption": ""
+        },
+        {
+          "code": "0 -005",
+          "src": "05.jpg",
+          "caption": ""
+        },
+        {
+          "code": "0 -006",
+          "src": "06.jpg",
+          "caption": ""
+        },
+        {
+          "code": "0 -007",
+          "src": "07.jpg",
+          "caption": "Crossroads Square"
+        },
+        {
+          "code": "0 -008",
+          "src": "08.jpg",
+          "caption": ""
+        },
+        {
+          "code": "0 -009",
+          "src": "09.jpg",
+          "caption": ""
+        },
+        {
+          "code": "0 -010",
+          "src": "10.jpg",
+          "caption": ""
+        },
+        {
+          "code": "0 -011",
+          "src": "11.jpg",
+          "caption": ""
+        },
+        {
+          "code": "0 -012",
+          "src": "12.jpg",
+          "caption": ""
+        },
+        {
+          "code": "0 -013",
+          "src": "13.jpg",
+          "caption": ""
+        },
+        {
+          "code": "0 -014",
+          "src": "14.jpg",
+          "caption": ""
+        },
+        {
+          "code": "0 -015",
+          "src": "15.jpg",
+          "caption": ""
+        },
+        {
+          "code": "0 -016",
+          "src": "16.jpg",
+          "caption": ""
+        },
+        {
+          "code": "0 -017",
+          "src": "17.jpg",
+          "caption": ""
+        },
+        {
+          "code": "0 -018",
+          "src": "18.jpg",
+          "caption": "happy valentine's"
+        },
+        {
+          "code": "0 -019",
+          "src": "19.jpg",
+          "caption": "Misic is the silence between the Notes"
+        },
+        {
+          "code": "0 -020",
+          "src": "20.jpg",
+          "caption": "After party"
+        },
+        {
+          "code": "0 -021",
+          "src": "21.jpg",
+          "caption": "Solar Power"
+        },
+        {
+          "code": "0 -022",
+          "src": "22.jpg",
+          "caption": "Solar Power #2"
+        },
+        {
+          "code": "0 -023",
+          "src": "23.jpg",
+          "caption": "Solar Power #3"
+        },
+        {
+          "code": "0 -024",
+          "src": "24.jpg",
+          "caption": "Make a wish to the Ginnie"
+        },
+        {
+          "code": "0 -025",
+          "src": "25.jpg",
+          "caption": ""
+        },
+        {
+          "code": "0 -026",
+          "src": "26.jpg",
+          "caption": "kiss me honey honey kiss me"
+        },
+        {
+          "code": "0 -027",
+          "src": "27.jpg",
+          "caption": ""
+        },
+        {
+          "code": "0 -028",
+          "src": "28.jpg",
+          "caption": ""
+        },
+        {
+          "code": "0 -029",
+          "src": "29.jpg",
+          "caption": ""
+        },
+        {
+          "code": "0 -030",
+          "src": "30.jpg",
+          "caption": ""
+        },
+        {
+          "code": "0 -031",
+          "src": "31.jpg",
+          "caption": ""
+        },
+        {
+          "code": "0 -032",
+          "src": "32.jpg",
+          "caption": ""
+        },
+        {
+          "code": "0 -033",
+          "src": "33.jpg",
+          "caption": ""
+        },
+        {
+          "code": "0 -034",
+          "src": "34.jpg",
+          "caption": ""
+        }
+      ]
+    },
+    {
+      "projectCode": "0 2",
+      "slug": "001 - window_to_redemption",
+      "title": "Window to Redemption",
+      "description": "A series of photographs taken from a single window overlooking Savior Square in Warsaw. Life is a theater that continues without pause, and the camera freezes moments in time. Life is what happens before we die.",
+      "folder": "projects/001 - window_to_redemption",
+      "cover": "01.jpg",
+      "images": [
+        {
+          "code": "0 2-001",
+          "src": "01.jpg",
+          "caption": ""
+        },
+        {
+          "code": "0 2-002",
+          "src": "02.jpg",
+          "caption": ""
+        },
+        {
+          "code": "0 2-003",
+          "src": "03.jpg",
+          "caption": ""
+        },
+        {
+          "code": "0 2-004",
+          "src": "04.jpg",
+          "caption": ""
+        },
+        {
+          "code": "0 2-005",
+          "src": "05.jpg",
+          "caption": ""
+        },
+        {
+          "code": "0 2-006",
+          "src": "06.jpg",
+          "caption": ""
+        },
+        {
+          "code": "0 2-007",
+          "src": "07.jpg",
+          "caption": ""
+        },
+        {
+          "code": "0 2-008",
+          "src": "08.jpg",
+          "caption": ""
+        },
+        {
+          "code": "0 2-009",
+          "src": "09.jpg",
+          "caption": ""
+        },
+        {
+          "code": "0 2-010",
+          "src": "10.jpg",
+          "caption": ""
+        },
+        {
+          "code": "0 2-011",
+          "src": "11.jpg",
+          "caption": ""
+        },
+        {
+          "code": "0 2-012",
+          "src": "12.jpg",
+          "caption": ""
+        },
+        {
+          "code": "0 2-013",
+          "src": "13.jpg",
+          "caption": ""
+        },
+        {
+          "code": "0 2-014",
+          "src": "14.jpg",
+          "caption": ""
+        },
+        {
+          "code": "0 2-015",
+          "src": "15.jpg",
+          "caption": ""
+        },
+        {
+          "code": "0 2-016",
+          "src": "16.jpg",
+          "caption": ""
+        },
+        {
+          "code": "0 2-017",
+          "src": "17.jpg",
+          "caption": ""
+        },
+        {
+          "code": "0 2-018",
+          "src": "18.jpg",
+          "caption": ""
+        },
+        {
+          "code": "0 2-019",
+          "src": "19.jpg",
+          "caption": ""
+        },
+        {
+          "code": "0 2-020",
+          "src": "20.jpg",
+          "caption": ""
+        },
+        {
+          "code": "0 2-021",
+          "src": "21.jpg",
+          "caption": ""
+        }
+      ]
+    },
+    {
+      "projectCode": "0 3",
+      "slug": "002 - ohhhhh_your_god",
+      "title": "Ohhhhh Your God",
+      "description": "A visual commentary on the religious show, provoking tension between faith & identity. Believe me.. - DON'T believe nobody.",
+      "folder": "projects/002 - ohhhhh_your_god",
+      "cover": "01.jpg",
+      "images": [
+        {
+          "code": "0 3-001",
+          "src": "01.jpg",
+          "caption": ""
+        },
+        {
+          "code": "0 3-002",
+          "src": "02.jpg",
+          "caption": ""
+        },
+        {
+          "code": "0 3-003",
+          "src": "03.jpg",
+          "caption": ""
+        },
+        {
+          "code": "0 3-004",
+          "src": "04.jpg",
+          "caption": ""
+        },
+        {
+          "code": "0 3-005",
+          "src": "05.jpg",
+          "caption": ""
+        },
+        {
+          "code": "0 3-006",
+          "src": "06.jpg",
+          "caption": ""
+        },
+        {
+          "code": "0 3-007",
+          "src": "07.jpg",
+          "caption": ""
+        },
+        {
+          "code": "0 3-008",
+          "src": "08.jpg",
+          "caption": ""
+        },
+        {
+          "code": "0 3-009",
+          "src": "09.jpg",
+          "caption": ""
+        },
+        {
+          "code": "0 3-010",
+          "src": "10.jpg",
+          "caption": ""
+        },
+        {
+          "code": "0 3-011",
+          "src": "11.jpg",
+          "caption": ""
+        },
+        {
+          "code": "0 3-012",
+          "src": "12.jpg",
+          "caption": ""
+        },
+        {
+          "code": "0 3-013",
+          "src": "13.jpg",
+          "caption": ""
+        },
+        {
+          "code": "0 3-014",
+          "src": "14.jpg",
+          "caption": ""
+        },
+        {
+          "code": "0 3-015",
+          "src": "15.jpg",
+          "caption": ""
+        },
+        {
+          "code": "0 3-016",
+          "src": "16.jpg",
+          "caption": ""
+        }
+      ]
+    },
+    {
+      "projectCode": "0 4",
+      "slug": "003 - demon_stration",
+      "title": "Demon Stration",
+      "description": "Confrontation between symbols of authority and resistance, examining how the political theatre shapes public perception.",
+      "folder": "projects/003 - demon_stration",
+      "cover": "01.jpg",
+      "images": [
+        {
+          "code": "0 4-001",
+          "src": "01.jpg",
+          "caption": ""
+        },
+        {
+          "code": "0 4-002",
+          "src": "02.jpg",
+          "caption": "Suspicious reflection"
+        },
+        {
+          "code": "0 4-003",
+          "src": "03.jpg",
+          "caption": ""
+        },
+        {
+          "code": "0 4-004",
+          "src": "04.jpg",
+          "caption": ""
+        },
+        {
+          "code": "0 4-005",
+          "src": "05.jpg",
+          "caption": ""
+        },
+        {
+          "code": "0 4-006",
+          "src": "06.jpg",
+          "caption": "independent for all"
+        },
+        {
+          "code": "0 4-007",
+          "src": "07.jpg",
+          "caption": "I'm came for my son"
+        },
+        {
+          "code": "0 4-008",
+          "src": "08.jpg",
+          "caption": "CASH will not replace BREAD"
+        },
+        {
+          "code": "0 4-009",
+          "src": "09.jpg",
+          "caption": ""
+        },
+        {
+          "code": "0 4-010",
+          "src": "10.jpg",
+          "caption": ""
+        },
+        {
+          "code": "0 4-011",
+          "src": "11.jpg",
+          "caption": "HEIL Palestine"
+        },
+        {
+          "code": "0 4-012",
+          "src": "12.jpg",
+          "caption": "Is real"
+        },
+        {
+          "code": "0 4-013",
+          "src": "13.jpg",
+          "caption": "Phony flag"
+        },
+        {
+          "code": "0 4-014",
+          "src": "14.jpg",
+          "caption": ""
+        },
+        {
+          "code": "0 4-015",
+          "src": "15.jpg",
+          "caption": ""
+        },
+        {
+          "code": "0 4-016",
+          "src": "16.jpg",
+          "caption": ""
+        },
+        {
+          "code": "0 4-017",
+          "src": "17.jpg",
+          "caption": ""
+        },
+        {
+          "code": "0 4-018",
+          "src": "18.jpg",
+          "caption": ""
+        },
+        {
+          "code": "0 4-019",
+          "src": "19.jpg",
+          "caption": ""
+        },
+        {
+          "code": "0 4-020",
+          "src": "20.jpg",
+          "caption": ""
+        },
+        {
+          "code": "0 4-021",
+          "src": "21.jpg",
+          "caption": ""
+        },
+        {
+          "code": "0 4-022",
+          "src": "22.jpg",
+          "caption": ""
+        },
+        {
+          "code": "0 4-023",
+          "src": "23.jpg",
+          "caption": ""
+        },
+        {
+          "code": "0 4-024",
+          "src": "24.jpg",
+          "caption": ""
+        },
+        {
+          "code": "0 4-025",
+          "src": "25.jpg",
+          "caption": ""
+        },
+        {
+          "code": "0 4-026",
+          "src": "26.jpg",
+          "caption": ""
+        },
+        {
+          "code": "0 4-027",
+          "src": "27.jpg",
+          "caption": ""
+        },
+        {
+          "code": "0 4-028",
+          "src": "28.jpg",
+          "caption": ""
+        },
+        {
+          "code": "0 4-029",
+          "src": "29.jpg",
+          "caption": ""
+        },
+        {
+          "code": "0 4-030",
+          "src": "30.jpg",
+          "caption": ""
+        },
+        {
+          "code": "0 4-031",
+          "src": "31.jpg",
+          "caption": ""
+        },
+        {
+          "code": "0 4-032",
+          "src": "32.jpg",
+          "caption": ""
+        },
+        {
+          "code": "0 4-033",
+          "src": "33.jpg",
+          "caption": ""
+        },
+        {
+          "code": "0 4-034",
+          "src": "34.jpg",
+          "caption": ""
+        },
+        {
+          "code": "0 4-035",
+          "src": "35.jpg",
+          "caption": ""
+        },
+        {
+          "code": "0 4-036",
+          "src": "36.jpg",
+          "caption": ""
+        },
+        {
+          "code": "0 4-037",
+          "src": "37.jpg",
+          "caption": ""
+        },
+        {
+          "code": "0 4-038",
+          "src": "38.jpg",
+          "caption": ""
+        },
+        {
+          "code": "0 4-039",
+          "src": "39.jpg",
+          "caption": ""
+        }
+      ]
+    },
+    {
+      "projectCode": "0 5",
+      "slug": "004 - windows_eyes_of_the_modern_soul",
+      "title": "Windows: Eyes of the Modern Soul",
+      "description": "We are surrounded by squares, boxes, corners, and frames. We see the world through them. It is our “Windows operating system.” ",
+      "folder": "projects/004 - windows_eyes_of_the_modern_soul",
+      "cover": "01.jpg",
+      "images": [
+        {
+          "code": "0 5-001",
+          "src": "01.jpg",
+          "caption": ""
+        },
+        {
+          "code": "0 5-002",
+          "src": "02.jpg",
+          "caption": ""
+        },
+        {
+          "code": "0 5-003",
+          "src": "03.jpg",
+          "caption": ""
+        },
+        {
+          "code": "0 5-004",
+          "src": "04.jpg",
+          "caption": ""
+        },
+        {
+          "code": "0 5-005",
+          "src": "05.jpg",
+          "caption": ""
+        },
+        {
+          "code": "0 5-006",
+          "src": "06.jpg",
+          "caption": ""
+        },
+        {
+          "code": "0 5-007",
+          "src": "07.jpg",
+          "caption": ""
+        },
+        {
+          "code": "0 5-008",
+          "src": "08.jpg",
+          "caption": ""
+        },
+        {
+          "code": "0 5-009",
+          "src": "09.jpg",
+          "caption": ""
+        },
+        {
+          "code": "0 5-010",
+          "src": "10.jpg",
+          "caption": ""
+        },
+        {
+          "code": "0 5-011",
+          "src": "11.jpg",
+          "caption": ""
+        },
+        {
+          "code": "0 5-012",
+          "src": "12.jpg",
+          "caption": ""
+        },
+        {
+          "code": "0 5-013",
+          "src": "13.jpg",
+          "caption": ""
+        },
+        {
+          "code": "0 5-014",
+          "src": "14.jpg",
+          "caption": ""
+        },
+        {
+          "code": "0 5-015",
+          "src": "15.jpg",
+          "caption": ""
+        },
+        {
+          "code": "0 5-016",
+          "src": "16.jpg",
+          "caption": ""
+        },
+        {
+          "code": "0 5-017",
+          "src": "17.jpg",
+          "caption": ""
+        },
+        {
+          "code": "0 5-018",
+          "src": "18.jpg",
+          "caption": ""
+        },
+        {
+          "code": "0 5-019",
+          "src": "19.jpg",
+          "caption": ""
+        },
+        {
+          "code": "0 5-020",
+          "src": "20.jpg",
+          "caption": ""
+        },
+        {
+          "code": "0 5-021",
+          "src": "21.jpg",
+          "caption": ""
+        },
+        {
+          "code": "0 5-022",
+          "src": "22.jpg",
+          "caption": ""
+        },
+        {
+          "code": "0 5-023",
+          "src": "23.jpg",
+          "caption": ""
+        },
+        {
+          "code": "0 5-024",
+          "src": "24.jpg",
+          "caption": ""
+        },
+        {
+          "code": "0 5-025",
+          "src": "25.jpg",
+          "caption": ""
+        },
+        {
+          "code": "0 5-026",
+          "src": "26.jpg",
+          "caption": ""
+        },
+        {
+          "code": "0 5-027",
+          "src": "27.jpg",
+          "caption": ""
+        },
+        {
+          "code": "0 5-028",
+          "src": "28.jpg",
+          "caption": ""
+        },
+        {
+          "code": "0 5-029",
+          "src": "29.jpg",
+          "caption": ""
+        },
+        {
+          "code": "0 5-030",
+          "src": "30.jpg",
+          "caption": ""
+        }
+      ]
+    },
+    {
+      "projectCode": "0 6",
+      "slug": "005 - dogy style",
+      "title": "Dogy Style",
+      "description": "A playful exploration of canine presence in urban spaces, capturing humor, movement, and the quiet personality of dogs within everyday moments.",
+      "folder": "projects/005 - dogy style",
+      "cover": "01.jpg",
+      "images": [
+        {
+          "code": "0 6-001",
+          "src": "01.jpg",
+          "caption": ""
+        },
+        {
+          "code": "0 6-002",
+          "src": "02.jpg",
+          "caption": ""
+        },
+        {
+          "code": "0 6-003",
+          "src": "03.jpg",
+          "caption": ""
+        },
+        {
+          "code": "0 6-004",
+          "src": "04.jpg",
+          "caption": ""
+        },
+        {
+          "code": "0 6-005",
+          "src": "05.jpg",
+          "caption": ""
+        },
+        {
+          "code": "0 6-006",
+          "src": "06.jpg",
+          "caption": ""
+        },
+        {
+          "code": "0 6-007",
+          "src": "07.jpg",
+          "caption": ""
+        },
+        {
+          "code": "0 6-008",
+          "src": "08.jpg",
+          "caption": ""
+        }
+      ]
+    },
+    {
+      "projectCode": "0 7",
+      "slug": "006 - smashed",
+      "title": "Smashed",
+      "description": "Teknologia BLAT - Smash it or Crush it",
+      "folder": "projects/006 - smashed",
+      "cover": "01.jpg",
+      "images": [
+        {
+          "code": "0 7-001",
+          "src": "01.jpg",
+          "caption": ""
+        },
+        {
+          "code": "0 7-002",
+          "src": "02.jpg",
+          "caption": ""
+        },
+        {
+          "code": "0 7-003",
+          "src": "03.jpg",
+          "caption": ""
+        },
+        {
+          "code": "0 7-004",
+          "src": "04.jpg",
+          "caption": ""
+        },
+        {
+          "code": "0 7-005",
+          "src": "05.jpg",
+          "caption": ""
+        },
+        {
+          "code": "0 7-006",
+          "src": "06.jpg",
+          "caption": ""
+        },
+        {
+          "code": "0 7-007",
+          "src": "07.jpg",
+          "caption": ""
+        },
+        {
+          "code": "0 7-008",
+          "src": "08.jpg",
+          "caption": ""
+        },
+        {
+          "code": "0 7-009",
+          "src": "09.jpg",
+          "caption": ""
+        },
+        {
+          "code": "0 7-010",
+          "src": "10.jpg",
+          "caption": ""
+        },
+        {
+          "code": "0 7-011",
+          "src": "11.jpg",
+          "caption": ""
+        },
+        {
+          "code": "0 7-012",
+          "src": "12.jpg",
+          "caption": ""
+        },
+        {
+          "code": "0 7-013",
+          "src": "13.jpg",
+          "caption": ""
+        },
+        {
+          "code": "0 7-014",
+          "src": "14.jpg",
+          "caption": ""
+        },
+        {
+          "code": "0 7-015",
+          "src": "15.jpg",
+          "caption": ""
+        },
+        {
+          "code": "0 7-016",
+          "src": "16.jpg",
+          "caption": ""
+        },
+        {
+          "code": "0 7-017",
+          "src": "17.jpg",
+          "caption": ""
+        },
+        {
+          "code": "0 7-018",
+          "src": "18.jpg",
+          "caption": ""
+        },
+        {
+          "code": "0 7-019",
+          "src": "19.jpg",
+          "caption": ""
+        },
+        {
+          "code": "0 7-020",
+          "src": "20.jpg",
+          "caption": ""
+        },
+        {
+          "code": "0 7-021",
+          "src": "21.jpg",
+          "caption": ""
+        },
+        {
+          "code": "0 7-022",
+          "src": "22.jpg",
+          "caption": ""
+        }
+      ]
+    },
+    {
+      "projectCode": "0 8",
+      "slug": "007 - umbrellas",
+      "title": "Umbrellas :)",
+      "description": "Fragments of color drifting through rain and sunlight, umbrellas becoming small moving shelters that reveal rhythm, solitude, and fleeting encounters in the city.",
+      "folder": "projects/007 - umbrellas",
+      "cover": "01.jpg",
+      "images": [
+        {
+          "code": "0 8-001",
+          "src": "01.jpg",
+          "caption": ""
+        },
+        {
+          "code": "0 8-002",
+          "src": "02.jpg",
+          "caption": ""
+        },
+        {
+          "code": "0 8-003",
+          "src": "03.jpg",
+          "caption": ""
+        },
+        {
+          "code": "0 8-004",
+          "src": "04.jpg",
+          "caption": ""
+        },
+        {
+          "code": "0 8-005",
+          "src": "05.jpg",
+          "caption": ""
+        },
+        {
+          "code": "0 8-006",
+          "src": "06.jpg",
+          "caption": ""
+        },
+        {
+          "code": "0 8-007",
+          "src": "07.jpg",
+          "caption": ""
+        },
+        {
+          "code": "0 8-008",
+          "src": "08.jpg",
+          "caption": ""
+        },
+        {
+          "code": "0 8-009",
+          "src": "09.jpg",
+          "caption": ""
+        },
+        {
+          "code": "0 8-010",
+          "src": "10.jpg",
+          "caption": ""
+        },
+        {
+          "code": "0 8-011",
+          "src": "11.jpg",
+          "caption": ""
+        },
+        {
+          "code": "0 8-012",
+          "src": "12.jpg",
+          "caption": ""
+        },
+        {
+          "code": "0 8-013",
+          "src": "13.jpg",
+          "caption": ""
+        },
+        {
+          "code": "0 8-014",
+          "src": "14.jpg",
+          "caption": ""
+        },
+        {
+          "code": "0 8-015",
+          "src": "15.jpg",
+          "caption": ""
+        },
+        {
+          "code": "0 8-016",
+          "src": "16.jpg",
+          "caption": ""
+        },
+        {
+          "code": "0 8-017",
+          "src": "17.jpg",
+          "caption": ""
+        },
+        {
+          "code": "0 8-018",
+          "src": "18.jpg",
+          "caption": ""
+        },
+        {
+          "code": "0 8-019",
+          "src": "19.jpg",
+          "caption": ""
+        },
+        {
+          "code": "0 8-020",
+          "src": "20.jpg",
+          "caption": ""
+        },
+        {
+          "code": "0 8-021",
+          "src": "21.jpg",
+          "caption": ""
+        },
+        {
+          "code": "0 8-022",
+          "src": "22.jpg",
+          "caption": ""
+        },
+        {
+          "code": "0 8-023",
+          "src": "23.jpg",
+          "caption": ""
+        },
+        {
+          "code": "0 8-024",
+          "src": "24.jpg",
+          "caption": ""
+        }
+      ]
+    },
+    {
+      "projectCode": "0 9",
+      "slug": "008 - arty",
+      "title": "Arty facts",
+      "description": "Visual notes disguised as observations — fragments of texture, coincidence, and irony that quietly document how art hides inside ordinary facts of daily life.",
+      "folder": "projects/008 - arty",
+      "cover": "01.jpg",
+      "images": [
+        {
+          "code": "0 9-001",
+          "src": "01.jpg",
+          "caption": ""
+        },
+        {
+          "code": "0 9-002",
+          "src": "02.jpg",
+          "caption": ""
+        },
+        {
+          "code": "0 9-003",
+          "src": "03.jpg",
+          "caption": ""
+        },
+        {
+          "code": "0 9-004",
+          "src": "04.jpg",
+          "caption": ""
+        },
+        {
+          "code": "0 9-005",
+          "src": "05.jpg",
+          "caption": ""
+        },
+        {
+          "code": "0 9-006",
+          "src": "06.jpg",
+          "caption": ""
+        },
+        {
+          "code": "0 9-007",
+          "src": "07.jpg",
+          "caption": ""
+        },
+        {
+          "code": "0 9-008",
+          "src": "08.jpg",
+          "caption": ""
+        },
+        {
+          "code": "0 9-009",
+          "src": "09.jpg",
+          "caption": ""
+        },
+        {
+          "code": "0 9-010",
+          "src": "10.jpg",
+          "caption": ""
+        },
+        {
+          "code": "0 9-011",
+          "src": "11.jpg",
+          "caption": ""
+        },
+        {
+          "code": "0 9-012",
+          "src": "12.jpg",
+          "caption": ""
+        },
+        {
+          "code": "0 9-013",
+          "src": "13.jpg",
+          "caption": ""
+        },
+        {
+          "code": "0 9-014",
+          "src": "14.jpg",
+          "caption": ""
+        },
+        {
+          "code": "0 9-015",
+          "src": "15.jpg",
+          "caption": ""
+        },
+        {
+          "code": "0 9-016",
+          "src": "16.jpg",
+          "caption": ""
+        },
+        {
+          "code": "0 9-017",
+          "src": "17.jpg",
+          "caption": ""
+        },
+        {
+          "code": "0 9-018",
+          "src": "18.jpg",
+          "caption": ""
+        },
+        {
+          "code": "0 9-019",
+          "src": "19.jpg",
+          "caption": ""
+        },
+        {
+          "code": "0 9-020",
+          "src": "20.jpg",
+          "caption": ""
+        },
+        {
+          "code": "0 9-021",
+          "src": "21.jpg",
+          "caption": ""
+        },
+        {
+          "code": "0 9-022",
+          "src": "22.jpg",
+          "caption": ""
+        },
+        {
+          "code": "0 9-023",
+          "src": "23.jpg",
+          "caption": ""
+        },
+        {
+          "code": "0 9-024",
+          "src": "24.jpg",
+          "caption": ""
+        },
+        {
+          "code": "0 9-025",
+          "src": "25.jpg",
+          "caption": ""
+        },
+        {
+          "code": "0 9-026",
+          "src": "26.jpg",
+          "caption": ""
+        },
+        {
+          "code": "0 9-027",
+          "src": "27.jpg",
+          "caption": ""
+        },
+        {
+          "code": "0 9-028",
+          "src": "28.jpg",
+          "caption": ""
+        },
+        {
+          "code": "0 9-029",
+          "src": "29.jpg",
+          "caption": ""
+        },
+        {
+          "code": "0 9-030",
+          "src": "30.jpg",
+          "caption": ""
+        },
+        {
+          "code": "0 9-031",
+          "src": "31.jpg",
+          "caption": ""
+        },
+        {
+          "code": "0 9-032",
+          "src": "32.jpg",
+          "caption": ""
+        },
+        {
+          "code": "0 9-033",
+          "src": "33.jpg",
+          "caption": ""
+        },
+        {
+          "code": "0 9-034",
+          "src": "34.jpg",
+          "caption": ""
+        },
+        {
+          "code": "0 9-035",
+          "src": "35.jpg",
+          "caption": ""
+        }
+      ]
+    },
+    {
+      "projectCode": "0 10",
+      "slug": "009 - KING NO SMO",
+      "title": "king No Smo",
+      "description": "A quiet rebellion against habits and rituals, capturing traces of restraint, empty gestures, and the subtle power of choosing absence over indulgence.",
+      "folder": "projects/009 - KING NO SMO",
+      "cover": "01.jpg",
+      "images": [
+        {
+          "code": "0 10-001",
+          "src": "01.jpg",
+          "caption": ""
+        },
+        {
+          "code": "0 10-002",
+          "src": "02.jpg",
+          "caption": ""
+        },
+        {
+          "code": "0 10-003",
+          "src": "03.jpg",
+          "caption": ""
+        },
+        {
+          "code": "0 10-004",
+          "src": "04.jpg",
+          "caption": ""
+        },
+        {
+          "code": "0 10-005",
+          "src": "05.jpg",
+          "caption": ""
+        },
+        {
+          "code": "0 10-006",
+          "src": "06.jpg",
+          "caption": ""
+        },
+        {
+          "code": "0 10-007",
+          "src": "07.jpg",
+          "caption": ""
+        },
+        {
+          "code": "0 10-008",
+          "src": "08.jpg",
+          "caption": ""
+        },
+        {
+          "code": "0 10-009",
+          "src": "09.jpg",
+          "caption": ""
+        },
+        {
+          "code": "0 10-010",
+          "src": "10.jpg",
+          "caption": ""
+        },
+        {
+          "code": "0 10-011",
+          "src": "11.jpg",
+          "caption": ""
+        },
+        {
+          "code": "0 10-012",
+          "src": "12.jpg",
+          "caption": ""
+        },
+        {
+          "code": "0 10-013",
+          "src": "13.jpg",
+          "caption": ""
+        },
+        {
+          "code": "0 10-014",
+          "src": "14.jpg",
+          "caption": ""
+        },
+        {
+          "code": "0 10-015",
+          "src": "15.jpg",
+          "caption": ""
+        },
+        {
+          "code": "0 10-016",
+          "src": "16.jpg",
+          "caption": ""
+        },
+        {
+          "code": "0 10-017",
+          "src": "17.jpg",
+          "caption": ""
+        },
+        {
+          "code": "0 10-018",
+          "src": "18.jpg",
+          "caption": ""
+        },
+        {
+          "code": "0 10-019",
+          "src": "19.jpg",
+          "caption": ""
+        }
+      ]
+    },
+    {
+      "projectCode": "0 11",
+      "slug": "010 - reflection",
+      "title": "Reflections",
+      "description": "Moments where reality folds back onto itself — glass, water, and polished surfaces turning the ordinary world into layered echoes of light, distortion, and quiet introspection.",
+      "folder": "projects/010 - reflection",
+      "cover": "01.jpg",
+      "images": [
+        {
+          "code": "0 11-001",
+          "src": "01.jpg",
+          "caption": ""
+        },
+        {
+          "code": "0 11-002",
+          "src": "02.jpg",
+          "caption": ""
+        },
+        {
+          "code": "0 11-003",
+          "src": "03.jpg",
+          "caption": ""
+        },
+        {
+          "code": "0 11-004",
+          "src": "04.jpg",
+          "caption": ""
+        },
+        {
+          "code": "0 11-005",
+          "src": "05.jpg",
+          "caption": ""
+        },
+        {
+          "code": "0 11-006",
+          "src": "06.jpg",
+          "caption": ""
+        },
+        {
+          "code": "0 11-007",
+          "src": "07.jpg",
+          "caption": ""
+        },
+        {
+          "code": "0 11-008",
+          "src": "08.jpg",
+          "caption": ""
+        },
+        {
+          "code": "0 11-009",
+          "src": "09.jpg",
+          "caption": ""
+        },
+        {
+          "code": "0 11-010",
+          "src": "10.jpg",
+          "caption": ""
+        },
+        {
+          "code": "0 11-011",
+          "src": "11.jpg",
+          "caption": ""
+        },
+        {
+          "code": "0 11-012",
+          "src": "12.jpg",
+          "caption": ""
+        },
+        {
+          "code": "0 11-013",
+          "src": "13.jpg",
+          "caption": ""
+        },
+        {
+          "code": "0 11-014",
+          "src": "14.jpg",
+          "caption": ""
+        }
+      ]
+    },
+    {
+      "projectCode": "0 12",
+      "slug": "011 - golden age",
+      "title": "golden age",
+      "description": "Fragments of warmth, nostalgia, and fading brilliance — small golden moments where light, time, and memory briefly align before dissolving back into the ordinary.",
+      "folder": "projects/011 - golden age",
+      "cover": "01.jpg",
+      "images": [
+        {
+          "code": "0 12-001",
+          "src": "01.jpg",
+          "caption": ""
+        },
+        {
+          "code": "0 12-002",
+          "src": "02.jpg",
+          "caption": ""
+        },
+        {
+          "code": "0 12-003",
+          "src": "03.jpg",
+          "caption": ""
+        },
+        {
+          "code": "0 12-004",
+          "src": "04.jpg",
+          "caption": ""
+        },
+        {
+          "code": "0 12-005",
+          "src": "05.jpg",
+          "caption": ""
+        },
+        {
+          "code": "0 12-006",
+          "src": "06.jpg",
+          "caption": ""
+        },
+        {
+          "code": "0 12-007",
+          "src": "07.jpg",
+          "caption": ""
+        },
+        {
+          "code": "0 12-008",
+          "src": "08.jpg",
+          "caption": ""
+        },
+        {
+          "code": "0 12-009",
+          "src": "09.jpg",
+          "caption": ""
+        },
+        {
+          "code": "0 12-010",
+          "src": "10.jpg",
+          "caption": ""
+        },
+        {
+          "code": "0 12-011",
+          "src": "11.jpg",
+          "caption": ""
+        },
+        {
+          "code": "0 12-012",
+          "src": "12.jpg",
+          "caption": ""
+        },
+        {
+          "code": "0 12-013",
+          "src": "13.jpg",
+          "caption": ""
+        },
+        {
+          "code": "0 12-014",
+          "src": "14.jpg",
+          "caption": ""
+        },
+        {
+          "code": "0 12-015",
+          "src": "15.jpg",
+          "caption": ""
+        },
+        {
+          "code": "0 12-016",
+          "src": "16.jpg",
+          "caption": ""
+        },
+        {
+          "code": "0 12-017",
+          "src": "17.jpg",
+          "caption": ""
+        },
+        {
+          "code": "0 12-018",
+          "src": "18.jpg",
+          "caption": ""
+        },
+        {
+          "code": "0 12-019",
+          "src": "19.jpg",
+          "caption": ""
+        },
+        {
+          "code": "0 12-020",
+          "src": "20.jpg",
+          "caption": ""
+        },
+        {
+          "code": "0 12-021",
+          "src": "21.jpg",
+          "caption": ""
+        },
+        {
+          "code": "0 12-022",
+          "src": "22.jpg",
+          "caption": ""
+        },
+        {
+          "code": "0 12-023",
+          "src": "23.jpg",
+          "caption": ""
+        }
+      ]
+    }
+  ]
+}
