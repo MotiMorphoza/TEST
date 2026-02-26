@@ -434,6 +434,7 @@ async function initPage() {
   runProjectsInit();
   await initProjectPage();
   runSlideshowInit();
+  runShopInit();
   initFullscreenLightboxSync();
   initPjaxNavigation();
 }
@@ -496,6 +497,14 @@ function enableDecodeFade(images) {
     });
   });
 }
+
+// ── ADD function after runSlideshowInit() ──────────────────
+function runShopInit() {
+  if (typeof window.initShopPage === 'function') {
+    window.initShopPage();
+  }
+}
+
 
 window.loadPage = loadPage;
 document.addEventListener("DOMContentLoaded", initPage);
