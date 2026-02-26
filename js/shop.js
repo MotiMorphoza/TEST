@@ -24,7 +24,7 @@ const SHOP_CONFIG = {
   // CONFIGURE: replace with your PayPal client-id from
   // https://developer.paypal.com/dashboard/applications
   paypal : {
-    clientId    : 'YOUR_PAYPAL_CLIENT_ID',
+    clientId    : 'ARxRd7iNprUdgAfIialpz8CTQu9H8kMP5RN8rlHlnxtUQEeiURoj4nZrkNX1NqgJDn34wGA0zUMxTvxM',
     environment : 'sandbox' // change to 'production' when ready
   },
 
