@@ -32,9 +32,9 @@ const SHOP_CONFIG = {
   // CONFIGURE: create account at https://www.emailjs.com
   // Add a service, a template, and paste the IDs here
   emailjs : {
-    serviceId  : 'YOUR_EMAILJS_SERVICE_ID',
-    templateId : 'YOUR_EMAILJS_TEMPLATE_ID',
-    publicKey  : 'YOUR_EMAILJS_PUBLIC_KEY'
+    serviceId  : 'service_a5a988a',
+    templateId : 'template_wmram69',
+    publicKey  : '4TVmDiBgB9ej8IlZ2'
   }
 };
 
